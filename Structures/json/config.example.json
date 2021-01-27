@@ -1,0 +1,23 @@
+{
+    "bot": {
+    "prefix": "prefixo do bot",
+    "token": "token do bot"
+    },
+  
+    "emoji": {
+    "sim": "<:correto:755501974425960548>",
+    "não": "<:negado:755502002619940935>"
+    },
+  
+    "connection": {
+      "mongo": "url da mongo",
+      "dbl": "dbl token"
+    },
+  
+    "webhook": {
+    "shard": "shard webhook token",
+    "guild": "guild webhook token",
+    "log": "coammand log webhook token"
+   }
+  
+  }
