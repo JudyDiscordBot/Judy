@@ -20,20 +20,6 @@ fs.readdir("./events/", (err, files) => {
 client.commands = new Collection();
 client.aliases = new Collection();
 
-/*fs.readdir("./commands/", (err, files) => {
-  if (err) console.error(err);
-  let arquivojs = files.filter(f => f.split(".").pop() == "js");
-  if(arquivojs.length <= 0)
-      return console.log(colors.brightBlue("[COMANDOS] - Não existem comandos para ser carregado"));
-      console.log(colors.brightBlue(`[COMANDOS] - Comandos Carregados ✓`));
-  arquivojs.forEach((f, i) => {
-    let props = require(`./commands/${f}`);
-    client.commands.set(props.help.name, props);
-    props.help.aliases.forEach(alias => {
-      client.aliases.set(alias, props.help.name);
-    });
-  });
-}); */
 
 glob(__dirname+'/commands/*/*.js', function (er, files) {
     if(er) console.log(er)
