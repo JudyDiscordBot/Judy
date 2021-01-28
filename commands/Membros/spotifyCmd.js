@@ -28,7 +28,7 @@ module.exports.run = async (client, message, args) => {
     }
 
  } catch (err) {
-    message.quote('```js\n' + err + '```')
+    return message.quote('```js\n' + err + '```')
             }
 
 let spotify = user.presence.activities

@@ -15,14 +15,14 @@ const f = require("node-fetch")
     f(`https://zuraaa.com/api/bots/${bot}`).then((zu) => zu.json()).then((zua) => {
     zura = zua
 try {
-    console.log(zura.details.shortDescription)
+    let desc = zura.details.shortDescription
 } catch {
-    message.quote(`Bot não encontrado`)
+     return message.quote(`Bot não encontrado`)
 }
 let zuraaainfo = new Discord.MessageEmbed()
 .setAuthor(zura.username +`#`+ zura.discriminator)
 .setThumbnail(`https://cdn.discordapp.com/avatars/${zura.id}/${zura.avatar}.png`)
-.setDescription(zura.details.shortDescription)
+.setDescription(desc)
 .setColor(`#FFC4E7`)
 .addField(`Prefixo`, `\`${zura.details.prefix}\`` , true)
 .addField(`Biblioteca`, `\`${zura.details.library}\``, true)

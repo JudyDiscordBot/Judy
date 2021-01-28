@@ -32,7 +32,7 @@ module.exports.run = async (client, message, args) => {
     }
 
  } catch (err) {
-    message.quote('```js\n' + err + '```')
+    return message.quote('```js\n' + err + '```')
             }
             const nitroav = user.avatar || 'https://cdn.discordapp.com/embed/avatars/0.png'
 			let abacate = message.mentions.users.first() || message.author
