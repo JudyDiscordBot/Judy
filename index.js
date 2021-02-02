@@ -1,9 +1,18 @@
 const config = require("./Structures/json/config.json");
 const colors = require("colors");
 const {Client, Collection} = require("discord.js");
-const client = new Client({ws: {intents: ['GUILDS', 'GUILD_MEMBERS', 'GUILD_MESSAGES', 'GUILD_BANS', 'GUILD_EMOJIS',  'GUILD_MESSAGE_REACTIONS', 'DIRECT_MESSAGES']}})
+const client = new Client()
+
+const { Player } = require('discord-player');
+
+client.player = new Player(client);
+client.config = require('./musicconfig/bot');
+client.emotes = client.config.emojis;
+client.filters = client.config.filters;
+
 const fs = require('fs');
 const glob = require('glob')
+
 require('./utils/MongoConnect.js')
 require('./Structures/Message/QuoteMessage.js')
 fs.readdir("./events/", (err, files) => {
@@ -32,6 +41,13 @@ glob(__dirname+'/commands/*/*.js', function (er, files) {
         })
     console.log("[COMANDOS] - Carregados com sucesso".brightCyan)
 })
+
+const player = fs.readdirSync('./player').filter(file => file.endsWith('.js'));
+
+for (const file of player) {
+    const event = require(`./player/${file}`)
+    client.player.on(file.split(".")[0], event.bind(null, client));
+}
 
 module.exports = {
   client,
