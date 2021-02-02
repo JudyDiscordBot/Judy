@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js-light');
 const mongoose = require("mongoose");
 const config = require('../../Structures/json/config.json')
 const dbUrl = config.connection.mongo;

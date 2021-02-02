@@ -11,11 +11,9 @@ client.on("ready", async () => {
         `${totalUsers} usuários! 😎 `
       ],
       i = 0;
-      const colors = require('colors')
-    setInterval( () => client.user.setActivity(`${activities[i++ % activities.length]}`, {
-          type: "WATCHING"
-        }), 1000 * 60); 
-              console.log(colors.cyan(`[SHARD] - Conectado na conta: ${client.user.tag} com  ${client.guilds.cache.size} servidores e ${client.users.cache.size} usuários`))
+    const colors = require('colors')
+    client.user.setActivity(`${activities[i++ % activities.length]}`)
+    console.log(colors.cyan(`[SHARD] - Conectado na conta: ${client.user.tag} com  ${client.guilds.cache.size} servidores e ${client.users.cache.size} usuários`))
     client.user
         .setStatus('online')
         .catch(console.error);

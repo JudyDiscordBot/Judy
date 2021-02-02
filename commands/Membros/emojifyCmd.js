@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const Discord = require('discord.js-light');
 
 exports.run = async (client, message, args, prefix) => {
     const erro = new Discord.MessageEmbed()

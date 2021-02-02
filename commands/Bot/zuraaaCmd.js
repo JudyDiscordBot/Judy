@@ -1,4 +1,4 @@
-const Discord = require('discord.js')
+const Discord = require('discord.js-light')
 exports.run = async (client, message, args) => {
 
 let bot = args[0]
@@ -22,7 +22,7 @@ try {
 let zuraaainfo = new Discord.MessageEmbed()
 .setAuthor(zura.username +`#`+ zura.discriminator)
 .setThumbnail(`https://cdn.discordapp.com/avatars/${zura.id}/${zura.avatar}.png`)
-.setDescription(desc)
+.setDescription(zura.details.shortDescription)
 .setColor(`#FFC4E7`)
 .addField(`Prefixo`, `\`${zura.details.prefix}\`` , true)
 .addField(`Biblioteca`, `\`${zura.details.library}\``, true)

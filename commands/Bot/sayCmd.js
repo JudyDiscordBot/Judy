@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js-light');
 
 module.exports.run = async (client, message, args) => {
  const db = require('../../Structures/json/db.json')

@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { MessageEmbed } = require('discord.js')
+const { MessageEmbed } = require('discord.js-light')
 const config = require('../../Structures/json/config.json')
 module.exports.run = async (client, message, args) => {
         const baseUrl = "https://corona.lmao.ninja/v2";

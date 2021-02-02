@@ -1,5 +1,5 @@
 const { client, config } = require("../index");
-const {WebhookClient } = require("discord.js")
+const {WebhookClient } = require('discord.js-light')
 
 client.on('shardDisconnect', (event, shardID) => {
     let hook = new WebhookClient('799668672104759396', config.webhook.shard)

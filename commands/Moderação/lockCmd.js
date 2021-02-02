@@ -1,4 +1,4 @@
- const Discord = require('discord.js');
+ const Discord = require('discord.js-light');
 exports.run = async (client, message, args, config) => {
   const db = require('../../Structures/json/db.json')
   if(!db.developer.includes(message.author.id)) return message.quote('**<:negado:755502002619940935> Apenas desenvolvedores do bot podem utilizar este comando!**')

@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js-light');
 const config = require('../../Structures/json/config.json') //
 const db = require("../../mongodb/blacklist.js");
 

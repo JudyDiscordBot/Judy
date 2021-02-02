@@ -1,6 +1,6 @@
 // Adapte para seu bot, isso é a base! By: Rafa
 const jimp = require("jimp")
-const Discord = require('discord.js')
+const Discord = require('discord.js-light')
 const cooldowns = {}
 const ms = require("ms")
 
