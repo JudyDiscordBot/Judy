@@ -1,5 +1,5 @@
-const Discord = require('discord.js-light')
-exports.run = async (client, message, args) => {
+const {MessageEmbed} = require('discord.js-light')
+module.exports.run = async (client, message, args) => {
 
 let bot = args[0]
 
@@ -19,7 +19,7 @@ try {
 } catch {
      return message.quote(`Bot não encontrado`)
 }
-let zuraaainfo = new Discord.MessageEmbed()
+let zuraaainfo = new MessageEmbed()
 .setAuthor(zura.username +`#`+ zura.discriminator)
 .setThumbnail(`https://cdn.discordapp.com/avatars/${zura.id}/${zura.avatar}.png`)
 .setDescription(zura.details.shortDescription)

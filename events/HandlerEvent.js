@@ -1,7 +1,7 @@
 const {client, config} = require("../index")
 const {MessageEmbed, WebhookClient} = require("discord.js-light");
 const comando = new WebhookClient('799683143937818634', config.webhook.log)
-//const user = require('../mongodb/user.js');
+const user = require('../mongodb/user.js');
 client.cooldown = new Set()
 const cooldowns = {}
 const ms = require('ms');
@@ -15,7 +15,7 @@ let prefix = config.bot.prefix;
     if(message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)){
       return  message.quote(`**Olá eu sou a Judy, meu prefixo *nesse servidor* é \`${prefix}\`, use \`${prefix}ajuda\` para ver meus comandos.**`)}
 
-  /* user.findOne({id:message.author.id}, (err, db) => {
+  user.findOne({id:message.author.id}, (err, db) => {
     if(db) return;
     if(!db) {
       var date = new Date();
@@ -28,7 +28,7 @@ let prefix = config.bot.prefix;
       message.quote(`<a:danacomigo:760151015583514655> Olá ${message.author}, como você não tinha uma conta criada em meu sistema eu acabei de criar uma pra você, espero que você goste de mim e que aproveite meus sistemas !!!! Hoje é um dia incrível, irei registrar esse exato momento que nos conhecemos em meu banco de dados para podermos comemorar ano que vem !!! <a:super_happy:801534215467827271>`)
     }
   })
-*/
+
    var argscm = message.content.substring(prefix.length).split(" ");
    let cmdcm = argscm.shift().toLowerCase();
    let commandcm = client.commands.get(cmdcm) || client.commands.get(client.aliases.get(cmdcm))

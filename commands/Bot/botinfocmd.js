@@ -1,4 +1,5 @@
 const os = require("os");
+const pid = require("pidusage")
 
 module.exports.run = async (client, message, args) => {
 
@@ -7,7 +8,7 @@ let modelo = os.cpus().map((i) => `${i.model}`)[0]
 let dono = await client.users.fetch('742798447253651506');
 let dono2 = await client.users.fetch('757928932199891094');
 let avatar = dono.avatarURL({ dynamic: true, format: 'png', size: 1024 });
-
+let cpu = await pid(process.pid).then(s =>{return s.cpu.toFixed(2)+" %"})
     const totalUsers = client.users.cache.size
     const totalGuilds = client.guilds.cache.size
     const owner = 742798447253651506
@@ -57,7 +58,7 @@ let avatar = dono.avatarURL({ dynamic: true, format: 'png', size: 1024 });
           },
           {
           "name": "<:cpu:755518314070933545>・CPU",
-            "value": `\`${(process.cpuUsage().system / 1024 / 1024).toFixed(2)}% de CPU\``,
+            "value": `\`${cpu} de CPU\``,
             "inline": true
           },
           {

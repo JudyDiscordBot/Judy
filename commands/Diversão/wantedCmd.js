@@ -13,7 +13,7 @@ module.exports.run = (bot, message, args) =>
     message.channel.startTyping();
 
     let i1 = Jimp.read(GuildMember.user.displayAvatarURL({ format: "png", size: 2048 }));
-    let i2 = Jimp.read("https://cdn.discordapp.com/attachments/469606974548344853/501026267798175756/aranuyr.png");
+    let i2 = Jimp.read("https://cdn.discordapp.com/attachments/767786504142585980/806365351302529054/aranuyr.png");
 
     Promise.all([i1, i2]).then((images) =>
     {

@@ -1,9 +1,7 @@
-// Adapte para seu bot, isso é a base! By: Rafa
 const jimp = require("jimp")
-const Discord = require('discord.js-light')
 const cooldowns = {}
 const ms = require("ms")
-
+const config = require('../../index')
 exports.run = async (client, message, args) => {
 
 if(!cooldowns[message.author.id]) cooldowns[message.author.id] = {
@@ -17,7 +15,7 @@ let resta = [time.seconds, 'segundos']
  
 if(resta[0] == 0) resta = ['alguns', 'millisegundos']
 if(resta[0] == 1) resta = [time.seconds, 'segundo']
-message.quote(`**Por favor ${message.author}, espere **\`${time}\`** para executar outro comando**`)
+message.quote(`** ${config.emoji.não} | Por favor ${message.author}, espere **\`${time}\`** para fazer outra edição**`)
        return;
     } else {
 cooldowns[message.author.id].lastCmd = Date.now() 

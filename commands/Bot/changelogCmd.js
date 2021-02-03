@@ -1,8 +1,8 @@
-const Discord = require('discord.js-light')
+const {MessageEmbed} = require('discord.js-light')
 const config = require('../../Structures/json/config.json')
 module.exports.run = async (client, message, args,) => {
 
-const log = new Discord.MessageEmbed()
+const log = new MessageEmbed()
     .setAuthor(`Changelog - 18/01/2021` , client.user.displayAvatarURL())
     .setDescription(`**${config.emoji.sim} Sistema de música adicionado\n${config.emoji.sim} Comandos modificados**`)
     .setColor(`#FFC4E7`)

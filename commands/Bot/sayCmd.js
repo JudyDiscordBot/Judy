@@ -1,5 +1,3 @@
-const Discord = require('discord.js-light');
-
 module.exports.run = async (client, message, args) => {
  const db = require('../../Structures/json/db.json')
 if (!message.member.permissions.has("MANAGE_MESSAGES"))
@@ -68,12 +66,6 @@ if (message.content.toLowerCase().includes("boleto")) {
    if (message.content.toLowerCase().includes("cep")) {
    return message.quote(`Qual foi zé ? Ta achando que eu não to vendo essas palhaçadas que você ta escrevendo não ?`)
    }
-
-  const sayMessage = args.join(" ");
-	const sayembed = new Discord.MessageEmbed()
-	.setDescription(`${sayMessage}\nㅤ`)
-	.setFooter(`Mensagem enviada por ${message.author.tag}`)
-	.setColor(`#FF00C2`)
 
   message.delete({ reason: `Eu apaguei a mensagem do usuário ${message.author.tag} que dizia: ${sayMessage}` }).catch(O_o => {});
   message.quote(`${sayMessage}\n\n

@@ -1,10 +1,6 @@
-const Discord = require('discord.js-light');
-
 module.exports.run = async (client, message, args) => {
     
 const db = require('../../Structures/json/db.json')
-    const admins = db.developer
-
      if(!db.developer.includes(message.author.id)) return message.quote('**<:negado:755502002619940935> Apenas desenvolvedores do bot podem utilizar este comando!**')
      message.quote(`<:correto:755501974425960548> | Ok, ${message.author}, Vou reiniciar....`);
      message.quote(`
