@@ -13,7 +13,7 @@ client.on("ready", async () => {
       i = 0;
     const colors = require('colors')
     client.user.setActivity(`${activities[i++ % activities.length]}`)
-    console.log(colors.cyan(`[SHARD] - Conectado na conta: ${client.user.tag} com  ${client.guilds.cache.size} servidores e ${client.users.cache.size} usuários`))
+    console.log(colors.brightBlue(`[SHARD] - Conectado na conta: ${client.user.tag} com  ${client.guilds.cache.size} servidores e ${client.users.cache.size} usuários`))
     client.user
         .setStatus('online')
         .catch(console.error);

@@ -46,7 +46,7 @@ glob(__dirname+'/commands/*/*.js', function (er, files) {
         client.aliases.set(alias, props.help.name);
         });
         })
-    console.log("[COMANDOS] - Carregados com sucesso".brightCyan)
+    console.log("[COMANDOS] - Carregados com sucesso".brightBlue)
 })
 
 const player = fs.readdirSync('./player').filter(file => file.endsWith('.js'));
