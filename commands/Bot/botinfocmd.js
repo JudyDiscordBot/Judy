@@ -62,7 +62,7 @@ let cpu = await pid(process.pid).then(s =>{return s.cpu.toFixed(2)+" %"})
             "inline": true
           },
           {
-          "name": `<:ubuntu:806301215382044722>・Hospedagem`,
+          "name": `<:info:788143555931406336>・Hospedagem`,
             "value": `**[Contabo](https://contabo.com)**`,
             "inline": true
           },

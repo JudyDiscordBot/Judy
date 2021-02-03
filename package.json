@@ -2,7 +2,7 @@
   "name": "judybot",
   "version": "6.0.0",
   "description": "Olá eu sou a Judy só que uma versão organizada (eu espero)",
-  "main": "index.js",
+  "main": "ShardManager.js",
   "dependencies": {
     "@discordjs/opus": "^0.4.0",
     "ascii-table": "0.0.9",
