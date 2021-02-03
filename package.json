@@ -15,7 +15,7 @@
     "discord.js-light": "^3.5.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "fs": "^0.0.1-security",
+    "fs": "0.0.1-security",
     "glob": "^7.1.6",
     "google-play-scraper": "^8.0.2",
     "jimp": "^0.16.1",
