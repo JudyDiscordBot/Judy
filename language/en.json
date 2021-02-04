@@ -1,0 +1,12 @@
+{
+    "handler": {
+        "mention": "**Hi I'm Judy, my prefix * on this server * is % use $ to see my commands.**",
+        "newuser": "<a:danacomigo:760151015583514655> Hello %, as you didn't have an account created on my system, I just created one for you, I hope you like me and enjoy my systems !!!! Today is an incredible day, I will record this exact moment that we met in my database so we can celebrate next year !!! <a:super_happy:801534215467827271>",
+        "cooldown": "** % | Please ! Wait for ** $ ** to execute another command**"
+    },
+    "ping": {
+        "calc": "Calculating ...",
+        "lt": "Latency:",
+        "ltapi": "API latency:"
+    }
+}
