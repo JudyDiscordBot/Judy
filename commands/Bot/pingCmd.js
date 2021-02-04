@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js-light');
 module.exports.run = async (client, message, args, t) => {
-      const msg = await message.channel.send(t.ping.calc);
+      const msg = await message.channel.send(`${t.ping.calc}`);
       const Embed = new MessageEmbed()
         .setAuthor(`Ping - Judy` , client.user.displayAvatarURL())
         .setDescription(

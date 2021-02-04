@@ -1,7 +1,7 @@
 const os = require("os");
 const pid = require("pidusage")
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (client, message, args, t) => {
 
 let modelo = os.cpus().map((i) => `${i.model}`)[0]
 
@@ -19,7 +19,7 @@ let cpu = await pid(process.pid).then(s =>{return s.cpu.toFixed(2)+" %"})
 
  await message.channel.send({
   "embed": {
-  "description": `**<a:yayy:755528352433176729> Olá eu sou a Judy um simples bot para discord.**\n\n> <a:rdg_sonicnite:760150886772375584> Tenho muitos comandos para moderação, pesquisas, logs e muito mais !!! Estou em **${guildsize} servidores**, estou tocando música em **${client.voice.connections.size} canais** e conheço mais ou menos **${usersize} usuários**\n\nFui desenvolvida em <:JavaScript:760148418286452756> [JavaScript](https://nodejs.org/en/) utilizando <:lunox_djs:760148013585793045> [Discord.js](https://discord.js.org/#/)\n\n <a:pastel_festaOSP:760150240841302047> Agradeço a você ${message.author.username} por ter curiosidade de ver minhas informações, se quiser aproveitar mais ainda os meus comandos e recursos me adicione em seu servidor clicando [aqui](https://discord.com/oauth2/authorize?client_id=757563141637799969&permissions=8&scope=bot). <:lansabraba:759923711872073761>\n\n<a:danacomigo:760151015583514655> Eu fui criada por \`${dono.tag}\` e \`${dono2.tag}\` no dia **21 de setembro de 2020**, mas como gosto muito de dormir acordei faz só **${API.time(client.uptime)} <a:sono_:760311151489450025> **`,
+  "description": t.botinfo.info.replace('$', `${guildsize}`).replace('%', `${client.voice.connections.size}`).replace('/', `${usersize}`).replace('@', `${message.author.username}`).replace('+',`\`\`${dono.tag}\`\``).replace('CABO',`\`${dono2.tag}\``).replace('UPTIME', `${API.time(client.uptime)}`),
   "title": "<:review:759923527389806604> Informações",
   "color": '#00D7FF',
   "footer": {

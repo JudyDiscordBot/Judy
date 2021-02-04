@@ -10,7 +10,7 @@ client.on("message", async message => {
   if (message.author.bot) return;
   if (message.channel.type == 'dm') return;
 
-let t = require('../language/pt.json')
+let t = require('../language/en.json')
 let prefix = config.bot.prefix;
 
     if(message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)){
