@@ -1,7 +1,7 @@
 const os = require("os");
 const pid = require("pidusage")
 
-module.exports.run = async (client, message, args, t) => {
+module.exports.run = async (client, message, args, idioma) => {
 
 let modelo = os.cpus().map((i) => `${i.model}`)[0]
 
@@ -19,7 +19,7 @@ let cpu = await pid(process.pid).then(s =>{return s.cpu.toFixed(2)+" %"})
 
  await message.channel.send({
   "embed": {
-  "description": t.botinfo.info.replace('$', `${guildsize}`).replace('%', `${client.voice.connections.size}`).replace('/', `${usersize}`).replace('@', `${message.author.username}`).replace('+',`\`\`${dono.tag}\`\``).replace('CABO',`\`${dono2.tag}\``).replace('UPTIME', `${API.time(client.uptime)}`),
+  "description": idioma.botinfo.info.replace('$', `${guildsize}`).replace('%', `${client.voice.connections.size}`).replace('/', `${usersize}`).replace('@', `${message.author.username}`).replace('+',`\`\`${dono.tag}\`\``).replace('CABO',`\`${dono2.tag}\``).replace('UPTIME', `${API.time(client.uptime)}`),
   "title": "<:review:759923527389806604> Informações",
   "color": '#00D7FF',
   "footer": {

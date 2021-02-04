@@ -1,12 +1,13 @@
 const { MessageEmbed } = require('discord.js-light');
-module.exports.run = async (client, message, args, t) => {
-      const msg = await message.channel.send(`${t.ping.calc}`);
+const {t} = require('../../events/HandlerEvent')
+module.exports.run = async (client, message, args, idioma) => {
+      const msg = await message.channel.send(`${idioma.ping.calc}`);
       const Embed = new MessageEmbed()
         .setAuthor(`Ping - Judy` , client.user.displayAvatarURL())
         .setDescription(
-          `⌛ ${t.ping.lt} **${Math.floor(
+          `⌛ ${idioma.ping.lt} **${Math.floor(
             msg.createdTimestamp - message.createdTimestamp
-          )}ms**\n⏲️ ${t.ping.ltapi} **${Math.round(client.ws.ping)}ms**`
+          )}ms**\n⏲️ ${idioma.ping.ltapi} **${Math.round(client.ws.ping)}ms**`
        )
        .setColor(`#FFC4E7`);
       msg.edit(Embed);

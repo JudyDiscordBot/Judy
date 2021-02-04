@@ -1,4 +1,5 @@
-{
+module.exports = client => {
+    client.idiomas.en = {
     "handler": {
         "mention": "**Hi I'm Judy, my prefix * on this server * is % use $ to see my commands.**",
         "newuser": "<a:danacomigo:760151015583514655> Hello %, as you didn't have an account created on my system, I just created one for you, I hope you like me and enjoy my systems !!!! Today is an incredible day, I will record this exact moment that we met in my database so we can celebrate next year !!! <a:super_happy:801534215467827271>",
@@ -12,4 +13,8 @@
     "botinfo": {
         "info": "**<a:yayy:755528352433176729> Hello I am Judy a simple bot for discord. ** \n\n> <a:rdg_sonicnite: 760150886772375584> I have a lot of commands for moderation, research, logs and more !!! I'm on ** $ servers **, I'm playing music on **% channels ** and I know more or less ** / users ** \n\n I was developed in <:JavaScript:760148418286452756> [JavaScript] (https://nodejs.org/en/) using <:lunox_djs:760148013585793045> [Discord.js] (https://discord.js.org/#/)\n\n <a:pastel_festaOSP:760150240841302047> Thank you @ for having curiosity to see my information, if you want to take more advantage of my commands and resources add me on your server by clicking [here] (https://discord.com/oauth2/authorize?client_id=757563141637799969&permissions=8&scope=bot). <:lansabraba:759923711872073761>\n\n <a:danacomigo:760151015583514655> I was raised by + and CABO on ** September 21, 2020 **, but as I really like sleeping I woke up just ** UPTIME <a:sono_:760311151489450025>**"
     }
+
+
+    }
+
 }

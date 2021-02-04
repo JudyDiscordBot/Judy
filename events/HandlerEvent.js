@@ -5,16 +5,31 @@ const user = require('../mongodb/user.js');
 client.cooldown = new Set()
 const cooldowns = {}
 const ms = require('ms');
+const ptbr = JSON.parse(JSON.stringify(client.idiomas.pt))
+const enus = JSON.parse(JSON.stringify(client.idiomas.en))
 
 client.on("message", async message => {
   if (message.author.bot) return;
   if (message.channel.type == 'dm') return;
 
-let t = require('../language/en.json')
+let idioma = client.idioma.get(message.guild.id) || 'pt'
 let prefix = config.bot.prefix;
 
+switch (idioma.toLowerCase()) {
+  case 'pt':
+  idioma = ptbr
+  break;
+  case 'en':
+  idioma = enus
+  break;
+  default:
+  idioma = ptbr
+  break;
+}
+
+
     if(message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)){
-      return  message.quote(t.handler.mention.replace('%', `\`${prefix}\``).replace('$',`\`${prefix}help\``))}
+      return  message.quote(idioma.handler.mention.replace('%', `\`${prefix}\``).replace('$',`\`${prefix}help\``))}
     if (!message.content.toLowerCase().startsWith(prefix.toLowerCase())) return;
 
   user.findOne({id:message.author.id}, (err, db) => {
@@ -49,7 +64,7 @@ let resta = [time.seconds, 'segundos']
 if(resta[0] == 0) resta = ['alguns', 'millisegundos']
 if(resta[0] == 1) resta = [time.seconds, 'segundo']
 
-    message.channel.send(t.handler.cooldown.replace('%', `${config.emoji.não}`).replace('!', `${message.author}`).replace('$', `\`${time}\``)).then(msg=> {
+    message.channel.send(idioma.handler.cooldown.replace('%', `${config.emoji.não}`).replace('!', `${message.author}`).replace('$', `\`${time}\``)).then(msg=> {
 msg.delete({ timeout: 10000 });
     })
    return;
@@ -63,7 +78,7 @@ try {
    var args = message.content.substring(prefix.length).split(" ");
    let cmd = args.shift().toLowerCase();
    let command = client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd))
-   command.run(client, message, args, prefix, t)
+   command.run(client, message, args, prefix, idioma)
    } catch (err) {
      return
    }
@@ -77,4 +92,5 @@ try {
             .addField('Mensagem:', `${message.content}`)
             .addField('Dados do servidor:', `Membros: ${message.guild.memberCount}\nNome: ${message.guild.name}\nID do server: ${message.guild.id}`);
             comando.send(embeddiretor);
+
 });

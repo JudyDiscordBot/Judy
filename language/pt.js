@@ -1,4 +1,5 @@
-{
+module.exports = client => {
+    client.idiomas.en = {
     "handler": {
         "mention": "**Olá eu sou a Judy, meu prefixo *nesse servidor* é % use $ para ver meus comandos.**",
         "newuser": "<a:danacomigo:760151015583514655> Olá %, como você não tinha uma conta criada em meu sistema eu acabei de criar uma pra você, espero que você goste de mim e que aproveite meus sistemas !!!! Hoje é um dia incrível, irei registrar esse exato momento que nos conhecemos em meu banco de dados para podermos comemorar ano que vem !!! <a:super_happy:801534215467827271>",
@@ -12,4 +13,5 @@
     "botinfo": {
         "info": "**<a:yayy:755528352433176729> Olá eu sou a Judy um simples bot para discord.**\n\n> <a:rdg_sonicnite:760150886772375584> Tenho muitos comandos para moderação, pesquisas, logs e muito mais !!! Estou em **$ servidores**, estou tocando música em **% canais** e conheço mais ou menos **/ usuários**\n\nFui desenvolvida em <:JavaScript:760148418286452756> [JavaScript](https://nodejs.org/en/) utilizando <:lunox_djs:760148013585793045> [Discord.js](https://discord.js.org/#/)\n\n <a:pastel_festaOSP:760150240841302047> Agradeço a você @ por ter curiosidade de ver minhas informações, se quiser aproveitar mais ainda os meus comandos e recursos me adicione em seu servidor clicando [aqui](https://discord.com/oauth2/authorize?client_id=757563141637799969&permissions=8&scope=bot). <:lansabraba:759923711872073761>\n\n<a:danacomigo:760151015583514655> Eu fui criada por + e CABO no dia **21 de setembro de 2020**, mas como gosto muito de dormir acordei faz só **UPTIME <a:sono_:760311151489450025> **"
     }
+  }
 }
