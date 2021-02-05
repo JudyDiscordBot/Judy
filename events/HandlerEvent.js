@@ -5,32 +5,15 @@ const user = require('../mongodb/user.js');
 client.cooldown = new Set()
 const cooldowns = {}
 const ms = require('ms');
-const ptbr = JSON.parse(JSON.stringify(client.idiomas.pt))
-const enus = JSON.parse(JSON.stringify(client.idiomas.en))
 
 client.on("message", async message => {
   if (message.author.bot) return;
   if (message.channel.type == 'dm') return;
 
-let idioma = client.idioma.get(message.guild.id) || 'pt'
 let prefix = config.bot.prefix;
-
-switch (idioma.toLowerCase()) {
-  case 'pt':
-  idioma = ptbr
-  break;
-  case 'en':
-  idioma = enus
-  break;
-  default:
-  idioma = ptbr
-  break;
-}
-
-
-    if(message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)){
-      return  message.quote(idioma.handler.mention.replace('%', `\`${prefix}\``).replace('$',`\`${prefix}help\``))}
     if (!message.content.toLowerCase().startsWith(prefix.toLowerCase())) return;
+    if(message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)){
+      return  message.quote(`**Olá eu sou a Judy, meu prefixo *nesse servidor* é \`${prefix}\`, use \`${prefix}ajuda\` para ver meus comandos.**`)}
 
   user.findOne({id:message.author.id}, (err, db) => {
     if(db) return;
@@ -42,7 +25,7 @@ switch (idioma.toLowerCase()) {
         id:message.author.id,
         date:dia
       }).save().catch(console.error);
-      message.quote(t.handler.newuser.replace('%', `${message.author}`))
+      message.quote(`<a:danacomigo:760151015583514655> Olá ${message.author}, como você não tinha uma conta criada em meu sistema eu acabei de criar uma pra você, espero que você goste de mim e que aproveite meus sistemas !!!! Hoje é um dia incrível, irei registrar esse exato momento que nos conhecemos em meu banco de dados para podermos comemorar ano que vem !!! <a:super_happy:801534215467827271>`)
     }
   })
 
@@ -64,7 +47,7 @@ let resta = [time.seconds, 'segundos']
 if(resta[0] == 0) resta = ['alguns', 'millisegundos']
 if(resta[0] == 1) resta = [time.seconds, 'segundo']
 
-    message.channel.send(idioma.handler.cooldown.replace('%', `${config.emoji.não}`).replace('!', `${message.author}`).replace('$', `\`${time}\``)).then(msg=> {
+    message.channel.send(`**Por favor ${message.author}, espere **\`${time}\`** para executar outro comando**`).then(msg=> {
 msg.delete({ timeout: 10000 });
     })
    return;
@@ -78,7 +61,7 @@ try {
    var args = message.content.substring(prefix.length).split(" ");
    let cmd = args.shift().toLowerCase();
    let command = client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd))
-   command.run(client, message, args, prefix, idioma)
+   command.run(client, message, args, prefix)
    } catch (err) {
      return
    }
@@ -92,5 +75,4 @@ try {
             .addField('Mensagem:', `${message.content}`)
             .addField('Dados do servidor:', `Membros: ${message.guild.memberCount}\nNome: ${message.guild.name}\nID do server: ${message.guild.id}`);
             comando.send(embeddiretor);
-
 });

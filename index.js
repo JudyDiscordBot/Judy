@@ -1,7 +1,6 @@
 const config = require("./Structures/json/config.json");
 const colors = require("colors");
 const {Client, Collection} = require("discord.js-light");
-const Enmap = require('enmap')
 const client = new Client({
     cacheGuilds: true,
     cacheChannels: false,
@@ -37,11 +36,6 @@ fs.readdir("./events/", (err, files) => {
 client.commands = new Collection();
 client.aliases = new Collection();
 
-client.idiomas = {}
-require('./language/pt')(client)
-require('./language/en')(client)
-
-client.idioma = new Enmap({ name: 'idiomas' })
 
 glob(__dirname+'/commands/*/*.js', function (er, files) {
     if(er) console.log(er)
