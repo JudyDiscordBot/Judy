@@ -7,6 +7,7 @@ const cooldowns = {}
 const ms = require('ms');
 const comandodb = require('../mongodb/cmd.js')
 const termos = require('../mongodb/termos.js')
+const bldb = require('../mongodb/blacklist.js')
 
 client.on("message", async message => {
   if (message.author.bot) return;
@@ -18,17 +19,18 @@ client.on("message", async message => {
     return  message.quote(`**Olá eu sou a Judy, meu prefixo *nesse servidor* é \`${prefix}\`, use \`${prefix}ajuda\` para ver meus comandos.**`)}
   if (!message.content.toLowerCase().startsWith(prefix.toLowerCase())) return;
 
-   bldb.findOne({_id:message.author.id}, (err, bl) => {
+   bldb.findOne({_id:message.author.id}, async (err, bl)  => {
         if(bl) {
-          const detectado = new Discord.MessageEmbed()
+
+          let moderador = await client.users.fetch(bl.autorTag)
+          const detectado = new MessageEmbed()
           .setTitle("<:info:788143555931406336> - Você não pode executar esse comando")
           .setColor(`#FFC4E7`)
-          .setDescription(`Você foi banido de utilizar minhas funções e meus comandos!!\n\n**Motivo:** \`${bl.motivo} - Punido por: ${bl.autorTag}\``)
+          .setDescription(`Você foi banido de utilizar minhas funções e meus comandos!!\n\n**Motivo:** \`${bl.motivo} - Punido por: ${moderador.tag}\``)
            return message.quote(detectado)
             }
 
-      termos.findOne({id:message.author.id}, (err, db) => {
-        if(db) return;
+      termos.findOne({id:message.author.id}, async (err, db) => {
         if(!db) {
           new termos({
             id:message.author.id,
@@ -44,7 +46,7 @@ client.on("message", async message => {
 
        if(!db) return message.quote(guideline)
 
-  user.findOne({id:message.author.id}, (err, db) => {
+  user.findOne({id:message.author.id}, async (err, db) => {
     if(db) return;
     if(!db) {
       var date = new Date();

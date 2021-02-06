@@ -46,9 +46,11 @@ API.time2 = function(s) {
     return (meses > 0 ? pad(meses) + 'm, ' : "") + (days > 0 ? pad(days) + 'd, ' : "") + (hrs > 0 ? pad(hrs) + 'h, ' : "") + (mins > 0 ? pad(mins) + 'm ' : "") + (pad(secs) + 's' )
 }
 
+
 API.badges = function(badges) {
-    return (badges.join(' ').replace('HOUSE_BALANCE', '<:hypesquad_balance:556683254586015765>').replace('HOUSE_BRILLIANCE', '<:hypesquad_brilliance:556683174563020810>').replace('HOUSE_BRAVERY', '<:hypesquad_bravery:556683071529811983>').replace('BUGHUNTER_LEVEL_1', '<:bughunter:556682363120254979>').replace('BUGHUNTER_LEVEL_2', '<:bughunter_lvl2:771327778791882764>').replace('DISCORD_PARTNER', '<:partner2:767235399943979038>').replace('VERIFIED_BOT', '<:verified_bot:763819634369495063>').replace('EARLY_SUPPORTER', '<:earlysupporter:556682087579516968>').replace('HYPESQUAD_EVENTS', '<:hypesquadevents:556682499569221662>').replace('TEAM_USER', '<:stafftools:771327236950982696>').replace('DISCORD_EMPLOYEE', '<:stafftools:771327236950982696>').replace('SYSTEM', '<:stafftools:771327236950982696>').replace('EARLY_VERIFIED_DEVELOPER', '<:dev_verificado:769314927105146921>').replace('VERIFIED_DEVELOPER', ' ‍').replace('PARTNERED_SERVER_OWNER', ' ‍') || ' ‍')
-}
+    return (badges.join(' ').replace('HOUSE_BALANCE', '<:hypesquad_balance:556683254586015765>').replace('HOUSE_BRILLIANCE', '<:hypesquad_brilliance:556683174563020810>').replace('HOUSE_BRAVERY', '<:hypesquad_bravery:556683071529811983>').replace('BUGHUNTER_LEVEL_1', '<:bughunter:556682363120254979>').replace('BUGHUNTER_LEVEL_2', '<:bughunter_lvl2:771327778791882764>').replace('DISCORD_PARTNER', '<:partner2:767235399943979038>').replace('VERIFIED_BOT', '<:verified_bot:763819634369495063>').replace('EARLY_SUPPORTER', '<:earlysupporter:556682087579516968>').replace('HYPESQUAD_EVENTS', '<:hypesquadevents:556682499569221662>').replace('TEAM_USER', '<:stafftools:771327236950982696>').replace('DISCORD_EMPLOYEE', '<:stafftools:771327236950982696>').replace('SYSTEM', '<:stafftools:771327236950982696>').replace('EARLY_VERIFIED_DEVELOPER', '<:dev_verificado:769314927105146921>').replace('VERIFIED_DEVELOPER', ' ‍').replace('PARTNERED_SERVER_OWNER', ' ‍') || ' ‍').catch(() => {return " ‍"})
+  }
+
 
 API.moment = function(numero, formato) {
     return (moment(numero).format(formato))

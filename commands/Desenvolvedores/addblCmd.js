@@ -23,7 +23,7 @@ module.exports.run = (client, message, args) => {
       } else {
         new db ({
           _id:id,
-          autorTag:message.author.tag,
+          autorTag:message.author.id,
           motivo:motivo
         }).save().catch(err => console.log(err))
 
@@ -38,7 +38,7 @@ module.exports.run = (client, message, args) => {
 };
 exports.help = {
     name: 'addbl',
-    aliases: ['starban', 'botban', 'bb'],
+    aliases: ['judyban', 'botban', 'bb'],
     status: 'on',
     onlydev: 'true'
 }
