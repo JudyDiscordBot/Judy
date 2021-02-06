@@ -31,8 +31,8 @@ let prefix = config.bot.prefix;
           .setThumbnail(client.user.displayAvatarURL())
           .setFooter(`Copyright (c) 2021 Judy`)
          return message.quote(guideline)
-        }
-      })
+        } else {
+      
 
   user.findOne({id:message.author.id}, (err, db) => {
     if(db) return;
@@ -82,20 +82,13 @@ try {
    let cmd = args.shift().toLowerCase();
    let command = client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd))
    command.run(client, message, args, prefix)
-
-
-   let argumentodb = message.content.substring(prefix.length).split(" ");
-
-   if(!args[0]) {
-     argumentodb = 'Não tem'
-   }
+   
    new comandodb({
     id:message.author.id,
     guild:message.guild.id,
     ping:client.ws.ping,
     date:new Date(),
-    command:cmd,
-    argumento:argumentodb
+    command:message.content
   }).save().catch(console.error);
 
    } catch (err) {
@@ -111,4 +104,7 @@ try {
             .addField('Mensagem:', `${message.content}`)
             .addField('Dados do servidor:', `Membros: ${message.guild.memberCount}\nNome: ${message.guild.name}\nID do server: ${message.guild.id}`);
             comando.send(embeddiretor);
+
+       }
+    })
 });
