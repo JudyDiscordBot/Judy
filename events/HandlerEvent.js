@@ -12,11 +12,20 @@ client.on("message", async message => {
   if (message.author.bot) return;
   if (message.channel.type == 'dm') return;
 
-let prefix = config.bot.prefix;
+  let prefix = config.bot.prefix;
 
-    if (!message.content.toLowerCase().startsWith(prefix.toLowerCase())) return;
-    if(message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)){
-      return  message.quote(`**Olá eu sou a Judy, meu prefixo *nesse servidor* é \`${prefix}\`, use \`${prefix}ajuda\` para ver meus comandos.**`)}
+  if(message.content.startsWith(`<@!${client.user.id}>`) || message.content.startsWith(`<@${client.user.id}>`)){
+    return  message.quote(`**Olá eu sou a Judy, meu prefixo *nesse servidor* é \`${prefix}\`, use \`${prefix}ajuda\` para ver meus comandos.**`)}
+  if (!message.content.toLowerCase().startsWith(prefix.toLowerCase())) return;
+
+   bldb.findOne({_id:message.author.id}, (err, bl) => {
+        if(bl) {
+          const detectado = new Discord.MessageEmbed()
+          .setTitle("<:info:788143555931406336> - Você não pode executar esse comando")
+          .setColor(`#FFC4E7`)
+          .setDescription(`Você foi banido de utilizar minhas funções e meus comandos!!\n\n**Motivo:** \`${bl.motivo} - Punido por: ${bl.autorTag}\``)
+           return message.quote(detectado)
+            }
 
       termos.findOne({id:message.author.id}, (err, db) => {
         if(db) return;
@@ -34,8 +43,6 @@ let prefix = config.bot.prefix;
         .setFooter(`Copyright (c) 2021 Judy`)
 
        if(!db) return message.quote(guideline)
-      
-      })
 
   user.findOne({id:message.author.id}, (err, db) => {
     if(db) return;
@@ -108,4 +115,6 @@ try {
             .addField('Dados do servidor:', `Membros: ${message.guild.memberCount}\nNome: ${message.guild.name}\nID do server: ${message.guild.id}`);
             comando.send(embeddiretor);
 
+       })
+    })
 });
