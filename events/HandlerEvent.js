@@ -24,15 +24,18 @@ let prefix = config.bot.prefix;
           new termos({
             id:message.author.id,
           }).save().catch(console.error);
-          const guideline = new MessageEmbed()
-          .setTitle('Termos de uso da Judy')
-          .setDescription(`**<:info:788143555931406336> Olá ${message.author}, seja bem vindo(a). Eu gostaria lhe informar algumas coisinhas antes de você começar a me utilizar: A partir do próximo comando que você executar, você automaticamente está concordando com os seguintes requsitos:**\n\n- Estamos observando todos os comandos que você executa\n- Os dados do servidor em que você executou algum comando são armazenados.\n- O seu ID, e a data do primeiro comando executado serão salvos em meu banco de dados.\n - Se você fizer algo de absurdo ou utilizar os recursos da Judy com objetivo de prejudicar outras pessoas, ou prejudicar o bot ou o desenvolvedor você será banido e não vamos remover o seu banimento, nem se você pagar.\n- Caso for banido por Raidar servidores de algum amigo meu, nem gaste seu tempo pedindo unban.\n\n- Fui desenvolvida em <:JavaScript:760148418286452756> [JavaScript](https://nodejs.org/en/) utilizando <:lunox_djs:760148013585793045> [Discord.js](https://discord.js.org/#/)`)
-          .setColor(`#FFC4E7`)
-          .setThumbnail(client.user.displayAvatarURL())
-          .setFooter(`Copyright (c) 2021 Judy`)
-         return message.quote(guideline)
-        } else {
+        }
+
+        const guideline = new MessageEmbed()
+        .setTitle('Termos de uso da Judy')
+        .setDescription(`**<:info:788143555931406336> Olá ${message.author}, seja bem vindo(a). Eu gostaria lhe informar algumas coisinhas antes de você começar a me utilizar: A partir do próximo comando que você executar, você automaticamente está concordando com os seguintes requsitos:**\n\n- Estamos observando todos os comandos que você executa\n- Os dados do servidor em que você executou algum comando são armazenados.\n- O seu ID, e a data do primeiro comando executado serão salvos em meu banco de dados.\n - Se você fizer algo de absurdo ou utilizar os recursos da Judy com objetivo de prejudicar outras pessoas, ou prejudicar o bot ou o desenvolvedor você será banido e não vamos remover o seu banimento, nem se você pagar.\n- Caso for banido por Raidar servidores de algum amigo meu, nem gaste seu tempo pedindo unban.\n\n- Fui desenvolvida em <:JavaScript:760148418286452756> [JavaScript](https://nodejs.org/en/) utilizando <:lunox_djs:760148013585793045> [Discord.js](https://discord.js.org/#/)`)
+        .setColor(`#FFC4E7`)
+        .setThumbnail(client.user.displayAvatarURL())
+        .setFooter(`Copyright (c) 2021 Judy`)
+
+       if(!db) return message.quote(guideline)
       
+      })
 
   user.findOne({id:message.author.id}, (err, db) => {
     if(db) return;
@@ -82,7 +85,7 @@ try {
    let cmd = args.shift().toLowerCase();
    let command = client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd))
    command.run(client, message, args, prefix)
-   
+
    new comandodb({
     id:message.author.id,
     guild:message.guild.id,
@@ -105,6 +108,4 @@ try {
             .addField('Dados do servidor:', `Membros: ${message.guild.memberCount}\nNome: ${message.guild.name}\nID do server: ${message.guild.id}`);
             comando.send(embeddiretor);
 
-       }
-    })
 });
