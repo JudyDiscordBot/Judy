@@ -1,4 +1,4 @@
-const Discord = require('discord.js-light')
+const Discord = require('discord.js')
 const {client, config} = require('../index')
 
 const adicionada = new Discord.WebhookClient(`799692984408080405`, config.webhook.guild)

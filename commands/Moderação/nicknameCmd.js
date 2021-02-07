@@ -1,4 +1,4 @@
-const {MessageEmbed} = require('discord.js-light')
+const {MessageEmbed} = require('discord.js')
 
 module.exports.run = async (client, message, args) => {
   if (!message.guild.me.hasPermission("MANAGE_NICKNAMES")) return message.quote("** Eu não tenho permissão de \`Gerenciar apelidos\`**")

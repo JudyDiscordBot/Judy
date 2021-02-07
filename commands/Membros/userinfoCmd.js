@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js-light');
+const { MessageEmbed } = require('discord.js');
 const API = require("../../utils/shardconfig")
 const moment = require('moment');
 

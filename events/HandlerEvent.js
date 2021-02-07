@@ -1,5 +1,5 @@
 const {client, config} = require("../index")
-const {MessageEmbed, WebhookClient} = require("discord.js-light");
+const {MessageEmbed, WebhookClient} = require("discord.js");
 const comando = new WebhookClient('799683143937818634', config.webhook.log)
 const user = require('../mongodb/user.js');
 client.cooldown = new Set()
@@ -19,6 +19,11 @@ client.on("message", async message => {
     return  message.quote(`**Olá eu sou a Judy, meu prefixo *nesse servidor* é \`${prefix}\`, use \`${prefix}ajuda\` para ver meus comandos.**`)}
   if (!message.content.toLowerCase().startsWith(prefix.toLowerCase())) return;
 
+  var argscm = message.content.substring(prefix.length).split(" ");
+  let cmdcm = argscm.shift().toLowerCase();
+  let commandcm = client.commands.get(cmdcm) || client.commands.get(client.aliases.get(cmdcm))
+
+  if(commandcm) {
    bldb.findOne({_id:message.author.id}, async (err, bl)  => {
         if(bl) {
 
@@ -27,6 +32,12 @@ client.on("message", async message => {
           .setTitle("<:info:788143555931406336> - Você não pode executar esse comando")
           .setColor(`#FFC4E7`)
           .setDescription(`Você foi banido de utilizar minhas funções e meus comandos!!\n\n**Motivo:** \`${bl.motivo} - Punido por: ${moderador.tag}\``)
+
+          if(client.cooldown.has(message.author.id)) return;
+          cooldown.add(message.author.id);
+          setTimeout(() => {
+            cooldown.delete(message.author.id)
+          }, 3600000)
            return message.quote(detectado)
             }
 
@@ -60,11 +71,6 @@ client.on("message", async message => {
     }
   })
 
-   var argscm = message.content.substring(prefix.length).split(" ");
-   let cmdcm = argscm.shift().toLowerCase();
-   let commandcm = client.commands.get(cmdcm) || client.commands.get(client.aliases.get(cmdcm))
-
-if(commandcm) {
 if(!cooldowns[message.author.id]) cooldowns[message.author.id] = {
   lastCmd: null
 }
@@ -78,15 +84,11 @@ let resta = [time.seconds, 'segundos']
 if(resta[0] == 0) resta = ['alguns', 'millisegundos']
 if(resta[0] == 1) resta = [time.seconds, 'segundo']
 
-    message.channel.send(`**Por favor ${message.author}, espere **\`${time}\`** para executar outro comando**`).then(msg=> {
-msg.delete({ timeout: 10000 });
-    })
+    message.channel.send(`**${config.emoji.não} | Por favor ${message.author}, espere **\`${time}\`** para executar outro comando**`)
    return;
 } else {
 cooldowns[message.author.id].lastCmd = Date.now() 
 }
-
-   }
 
 
 try {
@@ -119,4 +121,5 @@ try {
 
        })
     })
+  }
 });
