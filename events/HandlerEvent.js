@@ -91,7 +91,7 @@ try {
    var args = message.content.substring(prefix.length).split(" ");
    let cmd = args.shift().toLowerCase();
    let command = client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd))
-   command.run(client, message, args, prefix).then(() => message.channel.stopTyping(true)).catch(() => message.channel.stopTyping(true));
+   command.run(client, message, args, prefix).then(() => message.channel.stopTyping(true)).catch((e) => message.channel.stopTyping(true) + message.quote(`${config.emoji.não} | Ocorreu um erro ao executar o comando. Desculpe` + '```' + e + '```'));
 
    new comandodb({
     id:message.author.id,

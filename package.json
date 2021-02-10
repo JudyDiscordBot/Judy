@@ -34,12 +34,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MrAndre2020/JudyBackupGithub.git"
+    "url": "git+https://github.com/JudyDiscordBot/Judy"
   },
   "author": "MrAndre",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MrAndre2020/JudyBackupGithub/issues"
+    "url": "https://github.com/JudyDiscordBot/Judy/issues"
   },
-  "homepage": "https://github.com/MrAndre2020/JudyBackupGithub#readme"
+  "homepage": "https://github.com/JudyDiscordBot/Judy#readme"
 }
