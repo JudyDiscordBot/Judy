@@ -3,13 +3,6 @@ const colors = require("colors");
 const {Client, Collection} = require("discord.js");
 const client = new Client()
 
-const { Player } = require('discord-player');
-
-client.player = new Player(client);
-client.config = require('./musicconfig/bot');
-client.emotes = client.config.emojis;
-client.filters = client.config.filters;
-
 const fs = require('fs');
 const glob = require('glob')
 
@@ -42,12 +35,6 @@ glob(__dirname+'/commands/*/*.js', function (er, files) {
     console.log("[COMANDOS] - Carregados com sucesso".brightBlue)
 })
 
-const player = fs.readdirSync('./player').filter(file => file.endsWith('.js'));
-
-for (const file of player) {
-    const event = require(`./player/${file}`)
-    client.player.on(file.split(".")[0], event.bind(null, client));
-}
 
 module.exports = {
   client,

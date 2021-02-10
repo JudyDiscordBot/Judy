@@ -33,11 +33,6 @@ client.on("message", async message => {
           .setColor(`#FFC4E7`)
           .setDescription(`Você foi banido de utilizar minhas funções e meus comandos!!\n\n**Motivo:** \`${bl.motivo} - Punido por: ${moderador.tag}\``)
 
-          if(client.cooldown.has(message.author.id)) return;
-          cooldown.add(message.author.id);
-          setTimeout(() => {
-            cooldown.delete(message.author.id)
-          }, 3600000)
            return message.quote(detectado)
             }
 
@@ -92,10 +87,11 @@ cooldowns[message.author.id].lastCmd = Date.now()
 
 
 try {
+   message.channel.startTyping();
    var args = message.content.substring(prefix.length).split(" ");
    let cmd = args.shift().toLowerCase();
    let command = client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd))
-   command.run(client, message, args, prefix)
+   command.run(client, message, args, prefix).then(() => message.channel.stopTyping(true)).catch(() => message.channel.stopTyping(true));
 
    new comandodb({
     id:message.author.id,

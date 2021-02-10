@@ -2,7 +2,7 @@ const escapeRegex = (str) => str.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
 
 module.exports.verificaVotos = (message, callback) => {
     
-    if(message.author.id == '745828915993640980' && message.channel.id == '537433191393525760'){
+    if(message.author.id == '742798447253651506' && message.channel.id == '739152801665646682'){
         try {
 
             const regx = new RegExp('(.+) \\(([0-9]+)\\) votou no bot `' + escapeRegex(message.client.user.tag) + '`');

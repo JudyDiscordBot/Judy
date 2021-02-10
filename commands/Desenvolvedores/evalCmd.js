@@ -22,7 +22,7 @@ await message.channel.send('Executando...').then(async m => {
             .setAuthor(`Executado por ${message.author.tag}`)
 			      .setColor("#00ff36")
             .addField('🚩 Código', `\`\`\`js\n${result.slice(0, 1010)}\n\`\`\``)
-            .addField('🚩 Type', `\`\`\`js\n${typeof(result)}\n\`\`\``)
+            .addField('🚩 Type', `\`\`\`js\n${typeof(args.join(' '))}\n\`\`\``)
             if(result.length > 1010) embed.addField('🚩 Continuação do Resultado', `\`\`\`js\n${result.slice(1010, 2020)}\n\`\`\``)
     m.edit('<:correto:755501974425960548> Sucesso!', { embed: embed })
   } catch (e) {
