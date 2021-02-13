@@ -1,4 +1,4 @@
-const Discord = require('discord.js')
+const Discord = require('discord.js-light')
 var Jimp = require("jimp")
 
 exports.run = async (bot, message, args) => {

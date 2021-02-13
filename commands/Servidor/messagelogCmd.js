@@ -1,9 +1,9 @@
-const Discord = require('discord.js')
+const Discord = require('discord.js-light')
 const mongoose = require('mongoose')
 const logChannel = require('../../mongodb/messagelog.js')
 
 module.exports.run = async (client, message, args, prefix) => {
-  let channel = message.mentions.channels.first() || client.channels.cache.get(args[0])
+  let channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0])
 
   if(!message.member.hasPermission("ADMINISTRATOR")) {
   return message.quote("Você não tem permissão para usar este comando")

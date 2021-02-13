@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const Discord = require('discord.js-light');
 const {chooseerro} = require('../../functions/erro')
 
 module.exports.run = async (client, message, args, fs) => {

@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const Discord = require('discord.js-light');
 const moment = require("moment")
 const PlayStore = require("google-play-scraper");
 const EmbedColor = ``;

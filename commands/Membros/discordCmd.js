@@ -1,5 +1,5 @@
 const axios = require('axios') //npm i axios
-const Discord = require('discord.js')
+const Discord = require('discord.js-light')
 const URL = "https://djsdocs.sorta.moe/v2/embed?src=stable";
 module.exports.run = async(client, message, args) => {
      args = args.splice(0).join(" ");

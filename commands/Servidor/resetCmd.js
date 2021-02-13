@@ -1,4 +1,4 @@
-const Discord = require('discord.js')
+const Discord = require('discord.js-light')
 const mongoose = require('mongoose')
 const messagelog = require('../../mongodb/messagelog.js')
 const serverlog = require('../../mongodb/serverlog')

@@ -1,5 +1,5 @@
 const {client, config} = require("../index")
-const {MessageEmbed, WebhookClient} = require("discord.js");
+const {MessageEmbed, WebhookClient} = require('discord.js-light');
 const comando = new WebhookClient('799683143937818634', config.webhook.log)
 const user = require('../mongodb/user.js');
 client.cooldown = new Set()
@@ -8,6 +8,7 @@ const ms = require('ms');
 const comandodb = require('../mongodb/cmd.js')
 const termos = require('../mongodb/termos.js')
 const bldb = require('../mongodb/blacklist.js')
+const ch = require('../mongodb/channelcmd.js')
 
 client.on("message", async message => {
   if (message.author.bot) return;
@@ -66,6 +67,17 @@ client.on("message", async message => {
     }
   })
 
+    ch.findOne({guild:message.guild.id}, async (err, banana) => {
+      if(banana) { 
+      if(message.channel.id !== banana.channel) {
+        if (message.member.permissions.has("MANAGE_MESSAGES") || message.member.permissions.has("ADMINISTRATOR")){ 
+          message.channel.send(`**${config.emoji.sim} | Oie ${message.author}, aparentemente você não poderia executar comandos aqui, mas como você tem algumas permissões importantes nesse servidor resolvi autorizá-lo :sunglasses: :thumbsup:**`)
+        } else {
+      return message.quote(`** ${config.emoji.não} | Você não pode executar comandos aqui. Execute em <#${banana.channel}>**`)
+        }
+    }
+      }
+
 if(!cooldowns[message.author.id]) cooldowns[message.author.id] = {
   lastCmd: null
 }
@@ -87,11 +99,10 @@ cooldowns[message.author.id].lastCmd = Date.now()
 
 
 try {
-   message.channel.startTyping();
    var args = message.content.substring(prefix.length).split(" ");
    let cmd = args.shift().toLowerCase();
    let command = client.commands.get(cmd) || client.commands.get(client.aliases.get(cmd))
-   command.run(client, message, args, prefix).then(() => message.channel.stopTyping(true)).catch((e) => message.channel.stopTyping(true) + message.quote(`${config.emoji.não} | Ocorreu um erro ao executar o comando. Desculpe` + '```' + e + '```'));
+   command.run(client, message, args, prefix).then(() => message.channel.stopTyping(true)).catch((e) => message.quote(`${config.emoji.não} | Ocorreu um erro ao executar o comando. Desculpe` + '```' + e + '```'));
 
    new comandodb({
     id:message.author.id,
@@ -105,7 +116,6 @@ try {
      return
    }
 
-            var guild = message.guild;
             let embeddiretor = new MessageEmbed()
             .setTitle('Log de comandos!')
             .setThumbnail(message.guild.iconURL())
@@ -116,6 +126,7 @@ try {
             comando.send(embeddiretor);
 
        })
+      })
     })
   }
 });

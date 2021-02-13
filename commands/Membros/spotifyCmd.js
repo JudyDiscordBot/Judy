@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js')
+const { MessageEmbed } = require('discord.js-light')
 module.exports.run = async (client, message, args) => {
 
     let user = message.mentions.users.first();

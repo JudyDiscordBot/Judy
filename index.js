@@ -1,8 +1,14 @@
 const config = require("./Structures/json/config.json");
 const colors = require("colors");
-const {Client, Collection} = require("discord.js");
-const client = new Client()
-
+const {Client, Collection} = require('discord.js-light');
+const client = new Client({
+    cacheGuilds: true,
+    cacheChannels: false,
+    cacheOverwrites: false,
+    cacheRoles: true,
+    cacheEmojis: true,
+    cachePresences: false
+  });
 const fs = require('fs');
 const glob = require('glob')
 

@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+const Discord = require('discord.js-light');
 
 exports.run = async (bot, message, args) => {
 if (!args[0]) return message.quote('Você precisa escrever algo.')

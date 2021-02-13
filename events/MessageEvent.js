@@ -1,5 +1,5 @@
 const {client} = require("../index")
-const {MessageEmbed} = require("discord.js");
+const {MessageEmbed} = require('discord.js-light');
 const votosZuraaa = require('../utils/votosZuraaa.js');
 
 

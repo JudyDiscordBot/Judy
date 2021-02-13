@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js');
+const { MessageEmbed } = require('discord.js-light');
 module.exports.run = async (client, message, args) => {
       const msg = await message.channel.send("Calculando...");
       const Embed = new MessageEmbed()

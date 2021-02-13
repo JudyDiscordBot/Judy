@@ -1,4 +1,4 @@
-const {MessageEmbed} = require('discord.js')
+const {MessageEmbed} = require('discord.js-light')
 const config = require('../../Structures/json/config.json')
 module.exports.run = async (client, message, args,) => {
 

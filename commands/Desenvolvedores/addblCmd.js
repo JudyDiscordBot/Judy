@@ -1,5 +1,5 @@
-const Discord = require('discord.js');
-const config = require('../../Structures/json/config.json') //
+const Discord = require('discord.js-light');
+const config = require('../../Structures/json/config.json')
 const db = require("../../mongodb/blacklist.js");
 
 module.exports.run = (client, message, args) => {
@@ -14,12 +14,7 @@ module.exports.run = (client, message, args) => {
 
     db.findOne({_id:id}, (err, a) => {
       if(a) {
-        const dd = new Discord.MessageEmbed()
-        .setTitle("Blacklist | Erro")
-        .setColor("RED")
-        .setDescription("Esse usuário já esta na BlackList")
-        .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
-        return  message.quote(dd);
+        return  message.quote('Já ta na blacklist pai');
       } else {
         new db ({
           _id:id,
@@ -27,12 +22,7 @@ module.exports.run = (client, message, args) => {
           motivo:motivo
         }).save().catch(err => console.log(err))
 
-        const sucesso = new Discord.MessageEmbed()
-        .setTitle("BlackList | Sucesso")
-        .setColor("GREEN")
-        .setDescription(`O usuário ${user.tag} foi adicionado na blacklist`)
-        .setFooter(`Comando Executado por ${message.author.tag} • Versão: ${config.versão}`, message.author.displayAvatarURL({ dynamic: true, size: 2048 }))
-        return  message.quote(sucesso)
+        return  message.quote(`O usuário ${user.name} foi adicionado na blacklist`)
       }
     })
 };
