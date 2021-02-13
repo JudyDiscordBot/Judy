@@ -15,7 +15,7 @@ Públicos|avatar, serverinfo, userinfo, channelinfo, coronavírus, docs, morse, 
 Moderação|**~~slowmode~~**, clear, nickname, **~~lock~~**, **~~unlock~~**
 Miscelânea|playstore, perfil
 Diversão|procurado, primeiraspalavras, laranjo
-BOT|changelog, ping, say, botinfo, zuraaa
+BOT|changelog, ping, say, botinfo, zuraaa, channelcommand
 Desenvolvedores|Coisas do desenvolvedor... Ninguém que saber.
 
 > Os comandos que estiverem **~~marcados~~** não estão funcionando como deveria, e isso será resolvido com o tempo.
