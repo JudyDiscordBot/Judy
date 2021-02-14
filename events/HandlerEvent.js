@@ -63,7 +63,13 @@ client.on("message", async message => {
         id:message.author.id,
         date:dia
       }).save().catch(console.error);
-      message.quote(`<a:danacomigo:760151015583514655> Olá ${message.author}, como você não tinha uma conta criada em meu sistema eu acabei de criar uma pra você, espero que você goste de mim e que aproveite meus sistemas !!!! Hoje é um dia incrível, irei registrar esse exato momento que nos conhecemos em meu banco de dados para podermos comemorar ano que vem !!! <a:super_happy:801534215467827271>`)
+
+      const registerembed = new MessageEmbed()
+      .setTitle('Bem vindo(a) !!!')
+      .setDescription(`<a:danacomigo:760151015583514655> Olá ${message.author}, como você não tinha uma conta criada em meu sistema eu acabei de criar uma pra você. <a:super_happy:801534215467827271>`)
+      .addField('<:info:788143555931406336> Me adicione', '[Clique aqui](https://discord.com/oauth2/authorize?client_id=757563141637799969&permissions=8&scope=bot)', true)
+      .addField('<:dbl:757235965629825084> Discord Bot List', '[Clique aqui](https://top.gg/bot/757563141637799969)' , true)
+      message.quote(`<a:danacomigo:760151015583514655> Olá ${message.author}, como você não tinha uma conta criada em meu sistema eu acabei de criar uma pra você. <a:super_happy:801534215467827271>`)
     }
   })
 
