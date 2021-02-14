@@ -1,5 +1,5 @@
 const db = require('../../mongodb/channelcmd')
-
+const config = require('../../Structures/json/config.json')
 module.exports.run = async (client, message, args) => {
  let channel = message.mentions.channels.first() || client.channels.fetch(args[0]) 
   if(!message.member.hasPermission("ADMINISTRATOR")) return message.quote("Você não tem permissão para usar este comando")
