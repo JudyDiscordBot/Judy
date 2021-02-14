@@ -132,7 +132,9 @@ try {
             .setDescription(`Executaram um comando, no servidor **${message.guild.name}**`)
             .addField('Dados do executor:', `ID: ${message.author.id}\nUsername: ${message.author.username}\nUser Tag: ${message.author.tag}`)
             .addField('Mensagem:', `${message.content}`)
-            .addField('Dados do servidor:', `Membros: ${message.guild.memberCount}\nNome: ${message.guild.name}\nID do server: ${message.guild.id}`);
+            .addField('Dados do servidor:', `Membros: ${message.guild.memberCount}\nNome: ${message.guild.name}\nID do server: ${message.guild.id}`)
+            .setColor(`#FFC4E7`);
+
             comando.send(embeddiretor);
 
        })
