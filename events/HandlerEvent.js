@@ -69,10 +69,14 @@ client.on("message", async message => {
       .setDescription(`<a:danacomigo:760151015583514655> Olá ${message.author}, como você não tinha uma conta criada em meu sistema eu acabei de criar uma pra você. <a:super_happy:801534215467827271>`)
       .addField('<:info:788143555931406336> Me adicione', '[Clique aqui](https://discord.com/oauth2/authorize?client_id=757563141637799969&permissions=8&scope=bot)', true)
       .addField('<:dbl:757235965629825084> Discord Bot List', '[Clique aqui](https://top.gg/bot/757563141637799969)' , true)
-      message.quote(`<a:danacomigo:760151015583514655> Olá ${message.author}, como você não tinha uma conta criada em meu sistema eu acabei de criar uma pra você. <a:super_happy:801534215467827271>`)
+      .addField('Star\™️', '[Adicione a Star\™️](https://discordapp.com/oauth2/authorize?client_id=719524114536333342&scope=bot&permissions=2146958591)')
+      .addField('<:u_hehehe:810341672268857408> Lya', '[Adicione a Lya](https://discordapp.com/oauth2/authorize?client_id=719524114536333342&scope=bot&permissions=2146958591)')
+      .setThumbnail(client.user.displayAvatarURL())
+      .setTimestamp()
+      .setColor('#FFC4E7')
+      message.quote(registerembed)
     }
   })
-
     ch.findOne({guild:message.guild.id}, async (err, banana) => {
       if(banana) { 
       if(message.channel.id !== banana.channel) {

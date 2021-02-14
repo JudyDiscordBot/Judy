@@ -8,10 +8,15 @@ module.exports.run = async (client, message, args) => {
         return message.quote(`Ops ! Use ${prefix}serverlog #canal`)
         }
 
+        if(!channel.id){
+          return message.quote(`${config.emoji.não} | Canal inválido`)
+        }
+
 db.findOne({guild:message.guild.id}, (err, a) => {
         if(a) {
             return  message.quote(`[BETA] Esse servior já tem um canal de comandos configurado.\nUse \`${config.bot.prefix}resetar\` para configurar um novo.`)
-          } else {
+            }
+          if(!a){
             new db ({
               guild:message.guild.id,
               channel:channel.id,

@@ -6,9 +6,7 @@ if (!message.member.permissions.has("MANAGE_MESSAGES"))
 
       if (!args[0]) return message.quote('Você precisa escrever algo para eu poder falar.')
 
-  if (args.length < 1) {
-    message.quote(erro);
-}
+ let sayMessage = args[0]
 
       if (message.content.toLowerCase().includes("cpf")) {
    return message.quote(`Qual foi zé ? Ta achando que eu não to vendo esse CPF ai não ?`)
@@ -68,7 +66,7 @@ if (message.content.toLowerCase().includes("boleto")) {
    }
 
   message.delete({ reason: `Eu apaguei a mensagem do usuário ${message.author.tag} que dizia: ${sayMessage}` }).catch(O_o => {});
-  message.quote(`${sayMessage}\n\n
+  message.channel.send(`${sayMessage}\n\n
 <:cat_sad2:770321538284519484> Mensagem enviada por: ${message.author}.`);
 message.quote('Você está usando um comando de `Custom Message` (que permite alterar a mensagem enviada pelo bot). Use com inteligência se digitar palavras feias os Dados Pessoais de outras pessoas vamos saber, e temos provas suficientes para sua conta ser suspensa. Obrigada. ')
 };
