@@ -3,7 +3,7 @@ const colors = require("colors");
 const {Client, Collection} = require('discord.js-light');
 const client = new Client({
     cacheGuilds: true,
-    cacheChannels: false,
+    cacheChannels: true,
     cacheOverwrites: false,
     cacheRoles: true,
     cacheEmojis: true,

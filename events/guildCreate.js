@@ -11,4 +11,15 @@ client.on("guildCreate", async (guild) => {
   .setTimestamp()
   .setColor('#FFC4E7')
   adicionada.send(embed);
+
+  const f = require("node-fetch")
+
+
+    f(`https://zuraaa.com/api/bots/${client.user.id}`).then((zu) => zu.json()).then((zua) => {
+    zura = zua
+
+    client.channels.cache.get("810936129154187325").setName(`📝│Servidores: ${client.guilds.cache.size}`)
+    client.channels.cache.get("810936211321257994").setName(`📝│Votos Zuraaa!:  ${zura.votes.current}`)
+
+  })
 })
