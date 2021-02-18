@@ -1,4 +1,4 @@
-const Discord = require('discord.js-light')
+const Discord = require('discord.js')
 const {client, config} = require('../index')
 
 const adicionada = new Discord.WebhookClient(`799692984408080405`, config.webhook.guild)
@@ -18,8 +18,8 @@ client.on("guildCreate", async (guild) => {
     f(`https://zuraaa.com/api/bots/${client.user.id}`).then((zu) => zu.json()).then((zua) => {
     zura = zua
 
-    client.channels.cache.get("810936129154187325").setName(`📝│Servidores: ${client.guilds.cache.size}`)
-    client.channels.cache.get("810936211321257994").setName(`📝│Votos Zuraaa!:  ${zura.votes.current}`)
+    client.channels.cache.get("810936129154187325").setName(`📝│Servidores: ${client.guilds.cache.size}`).catch((e) => console.log(colors.red(e)))
+    client.channels.cache.get("810936211321257994").setName(`📝│Votos Zuraaa!:  ${zura.votes.current}`).catch((e) => console.log(colors.red(e)))
 
   })
 })

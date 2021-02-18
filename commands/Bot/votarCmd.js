@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js-light');
+const { MessageEmbed } = require('discord.js');
 const voto = require('../../mongodb/voto.js')
 const {config} = require('../../index')
 

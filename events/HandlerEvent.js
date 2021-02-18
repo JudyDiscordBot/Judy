@@ -1,5 +1,5 @@
 const {client, config} = require("../index")
-const {MessageEmbed, WebhookClient} = require('discord.js-light');
+const {MessageEmbed, WebhookClient} = require('discord.js');
 const comando = new WebhookClient('799683143937818634', config.webhook.log)
 const user = require('../mongodb/user.js');
 client.cooldown = new Set()
@@ -51,7 +51,9 @@ client.on("message", async message => {
         .setThumbnail(client.user.displayAvatarURL())
         .setFooter(`Copyright (c) 2021 Judy`)
 
-       if(!db) return message.quote(guideline)
+       if(!db) {
+         return message.quote(guideline)
+       }
 
   user.findOne({id:message.author.id}, async (err, db) => {
     if(db) return;
@@ -68,9 +70,9 @@ client.on("message", async message => {
       .setTitle('Bem vindo(a) !!!')
       .setDescription(`<a:danacomigo:760151015583514655> Olá ${message.author}, como você não tinha uma conta criada em meu sistema eu acabei de criar uma pra você. <a:super_happy:801534215467827271>`)
       .addField('<:info:788143555931406336> Me adicione', '[Clique aqui](https://discord.com/oauth2/authorize?client_id=757563141637799969&permissions=8&scope=bot)', true)
-      .addField('<:dbl:757235965629825084> Discord Bot List', '[Clique aqui](https://top.gg/bot/757563141637799969)' , true)
-      .addField('Star\™️', '[Adicione a Star\™️](https://discordapp.com/oauth2/authorize?client_id=719524114536333342&scope=bot&permissions=2146958591)')
-      .addField('<:u_hehehe:810341672268857408> Lya', '[Adicione a Lya](https://discordapp.com/oauth2/authorize?client_id=719524114536333342&scope=bot&permissions=2146958591)')
+      .addField('<:dbl:811270900531986492> Discord Bot List', '[Clique aqui](https://top.gg/bot/757563141637799969)' , true)
+      .addField('<:star_desconfiada:796457831934853140> Star\™️', '[Adicione a Star\™️](https://discordapp.com/oauth2/authorize?client_id=719524114536333342&scope=bot&permissions=2146958591)', true)
+      .addField('<:sad_cat_joinha:773969900729401445> Meu servidor de suporte', '[Clique aqui para entrar](https://discord.gg/p3wwQSEFw6)',true)
       .setThumbnail(client.user.displayAvatarURL())
       .setTimestamp()
       .setColor('#FFC4E7')

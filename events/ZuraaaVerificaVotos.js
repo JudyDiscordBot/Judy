@@ -1,7 +1,7 @@
 const {client, config} = require("../index")
 const votosZuraaa = require('../Structures/Zuraaa.com/ZuraaaVotos.js')
 const voto = require('../mongodb/voto.js')
-const {MessageEmbed} = require('discord.js-light');
+const {MessageEmbed} = require('discord.js');
 
 client.on("message", async message => {
 

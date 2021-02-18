@@ -1,4 +1,4 @@
-const {MessageAttachment} = require('discord.js-light');
+const {MessageAttachment} = require('discord.js');
 const {config} = require('../../index')
 const fetch = require('node-fetch');
 

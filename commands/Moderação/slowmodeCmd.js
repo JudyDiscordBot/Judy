@@ -1,4 +1,4 @@
-const Discord = require('discord.js-light')
+const Discord = require('discord.js')
 
 exports.run = async (bot, message, args) => {
     let user = args[0];

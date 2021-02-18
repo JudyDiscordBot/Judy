@@ -1,4 +1,4 @@
-const Discord = require('discord.js-light'); //Conexão com a livraria discord.js
+const Discord = require('discord.js'); //Conexão com a livraria discord.js
 const config = require('../../Structures/json/config.json')
 exports.run = async (client, message, args) => { //estrutura básica de criação de um comando
 

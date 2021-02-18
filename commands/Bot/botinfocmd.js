@@ -3,14 +3,21 @@ const pid = require("pidusage")
 
 module.exports.run = async (client, message, args) => {
 
-let modelo = os.cpus().map((i) => `${i.model}`)[0]
+  const promises = [
+    client.shard.fetchClientValues('users.cache.size'),
+    client.shard.fetchClientValues('guilds.cache.size'),
+    client.shard.fetchClientValues('channels.cache.size'),
+];
+Promise.all(promises).then(async results => {
+    const totalUsers = results[0].reduce((prev, userCount) => prev + userCount, 0);
+    const totalGuilds = results[1].reduce((prev, guildCount) => prev + guildCount, 0);
+
 
 let dono = await client.users.fetch('742798447253651506');
 let dono2 = await client.users.fetch('757928932199891094');
 let avatar = dono.avatarURL({ dynamic: true, format: 'png', size: 1024 });
 let cpu = await pid(process.pid).then(s =>{return s.cpu.toFixed(2)+" %"})
-    const totalUsers = client.users.cache.size
-    const totalGuilds = client.guilds.cache.size
+
     const owner = 742798447253651506
     const API = require("../../utils/shardconfig")
     
@@ -82,7 +89,8 @@ let cpu = await pid(process.pid).then(s =>{return s.cpu.toFixed(2)+" %"})
 
           })
 
-  })
+      })
+   })
 
 };
 

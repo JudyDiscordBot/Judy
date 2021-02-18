@@ -1,4 +1,4 @@
-const { MessageEmbed } = require('discord.js-light');
+const { MessageEmbed } = require('discord.js');
 const moment = require('moment');
 module.exports.run = async (client, message, args) => {
         const region = {

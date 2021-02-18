@@ -1,4 +1,4 @@
-const Discord = require('discord.js-light')
+const Discord = require('discord.js')
 const { parse } = require('twemoji-parser')
 
 module.exports.run = async (client, message, args, prefix) => {
