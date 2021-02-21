@@ -1,6 +1,6 @@
 {
     "blacklist": [],
-    "developer": ["742798447253651506", "757928932199891094"],
+    "developer": ["742798447253651506"],
     "filtro": ["cpf","rg" , "raça" , "raca" , "idade" , "nacionalidade" , "Dados pessoais" , "pessoais" , "cartão" , "boleto" , "cheque" , "banco" , "ip" , "cep", "R.G" , "C.P.F." , "C.PF" , "C,P,F", "CP.F", "C.P.F", "R.G.","c.p.f." , "c.pf", "c,p,f", "cp.f", "c.p.f", "r.g", "r.g."],
     "calc": [":","zeros","range","ones"]
     }

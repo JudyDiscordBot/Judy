@@ -5,6 +5,8 @@ exports.help = {
     onlydev: 'false'
 }
 
+const config = require('../../Structures/json/config.json')
+
 module.exports.run = async (client, message, args) => {
         if (!message.member.voice.channel) return message.channel.send(`${client.emotes.error} - **Você não está em um canal de voz !**`);
 
@@ -27,7 +29,7 @@ module.exports.run = async (client, message, args) => {
                     { name: '** **', value: filtersStatuses[1].join('\n'), inline: true },
                 ],
                 timestamp: new Date(),
-                description: `Lista de todos os filtros ativados ou desativados.\n Utilize ${client.config.discord.prefix}filtro para adicionar um filtro para música atual.`,
+                description: `Lista de todos os filtros ativados ou desativados.\n Utilize ${config.bot.prefix}filtro para adicionar um filtro para música atual.`,
             },
         });
     }
