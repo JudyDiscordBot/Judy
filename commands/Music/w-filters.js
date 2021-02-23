@@ -2,7 +2,12 @@ exports.help = {
     name: 'w-filters',
     aliases: ['filters', 'filtros'],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'Música',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens', 'Conectar-se ao canal de voz'],
+    descrição: 'Mostra todos os filtros e quais estão ativados/desativados no momento',
+    use: 'filtros'
 }
 
 const config = require('../../Structures/json/config.json')

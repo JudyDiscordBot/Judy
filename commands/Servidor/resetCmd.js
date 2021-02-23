@@ -28,5 +28,10 @@ exports.help = {
     name: 'reset',
     aliases: ['resetar'],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'Servidor',
+    permissões: ['Administrador'],
+    permissõesbot: ['Enviar mensagens', 'Administrador'],
+    descrição: 'Reseta algum dado do meu banco de dados',
+    use: 'resetar [dado que você quer remover]'
 }

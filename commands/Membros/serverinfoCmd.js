@@ -81,5 +81,10 @@ exports.help = {
     name: 'serverinfo',
     aliases: [],
     status: "on",
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'Membros',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens', 'Enviar Embeds e links'],
+    descrição: 'Veja informações sobre o seu servidor',
+    use: 'serverinfo'
 }

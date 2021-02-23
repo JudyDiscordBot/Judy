@@ -16,5 +16,10 @@ module.exports.run = async (client, message, args, prefix) => {
 exports.help = {
     name: "changemymind",
     aliases: ['cmm'],
-    status: 'on'
+    status: 'on',
+    categoria: 'Diversao',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens', 'Enviar arquivos e imagens'],
+    descrição: 'Change My Mind bro !!!!! ',
+    use: 'cmm [user]'
 }

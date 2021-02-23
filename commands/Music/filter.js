@@ -2,7 +2,12 @@ exports.help = {
     name: 'filter',
     aliases: ['filtro'],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'Música',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens', 'Conectar-se ao canal de voz'],
+    descrição: 'Adiciona um filtro a todas as músicas da fila',
+    use: 'filter [filtro]'
 }
 
 module.exports.run = async (client, message, args) => {

@@ -2,7 +2,13 @@ exports.help = {
     name: 'skip',
     aliases: ['sk', 's', 'pular'],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'Música',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens', 'Conectar-se ao canal de voz'],
+    descrição: 'Pula a música atual',
+    use: 'skip'
+    
 }
 
 module.exports.run = async (client, message, args) => {

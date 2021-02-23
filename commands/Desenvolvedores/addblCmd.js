@@ -30,5 +30,10 @@ exports.help = {
     name: 'addbl',
     aliases: ['judyban', 'botban', 'bb'],
     status: 'on',
-    onlydev: 'true'
+    onlydev: 'true',
+    categoria: 'Desenvolvedor',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens'],
+    descrição: 'Bane um usuário de executar meus comandos',
+    use: 'judyban [user]'
 }

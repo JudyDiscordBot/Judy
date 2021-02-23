@@ -18,5 +18,10 @@ module.exports.run = async (client, message, args) => {
       name: 'ping',
       aliases: [],
       status: 'on',
-      onlydev: 'false'
+      onlydev: 'false',
+      categoria: 'BOT',
+      permissões: [],
+      permissõesbot: ['Enviar mensagens', 'Enviar Embeds e Links'],
+      descrição: 'Veja o tempo de resposta do Bot.',
+      use: 'ping'
     }

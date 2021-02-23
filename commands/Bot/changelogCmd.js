@@ -13,5 +13,10 @@ exports.help = {
     name: 'changelog',
     aliases: ['updates','novidades'],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'BOT',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens', 'Enviar Embeds e Links'],
+    descrição: 'Veja oque foi adicionado e oque mudou nas atualizações da Judy',
+    use: 'changelog'
   }

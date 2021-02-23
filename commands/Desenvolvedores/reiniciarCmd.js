@@ -19,5 +19,11 @@ setTimeout(() => {
         name: 'reiniciar',
         aliases: ['r'],
         status: 'on',
-        onlydev: 'true'
+        onlydev: 'true',
+        categoria: 'Desenvolvedor',
+        permissões: [],
+        permissõesbot: ['Enviar mensagens'],
+        descrição: 'Reinicia o bot',
+        use: 'reiniciar'
+        
       }

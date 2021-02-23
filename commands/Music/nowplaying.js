@@ -2,7 +2,12 @@ exports.help = {
     name: 'nowplaying',
     aliases: ['np', 'tocando', 'reproduzindo'],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'Música',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens', 'Conectar-se ao canal de voz'],
+    descrição: 'Mostra informações sobre a música que está tocando agora',
+    use: 'nowplaying'
 }
 
 module.exports.run = async (client, message, args) => {

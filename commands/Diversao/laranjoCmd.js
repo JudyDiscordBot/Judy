@@ -38,5 +38,10 @@ cooldowns[message.author.id].lastCmd = Date.now()
         name: 'laranjo',
         aliases: [],
         status: 'on',
-        onlydev: 'false'
+        onlydev: 'false',
+        categoria: 'Diversao',
+        permissões: [],
+        permissõesbot: ['Enviar mensagens', 'Enviar arquivos e imagens'],
+        descrição: 'Faz uma edit do laranjo !!!',
+        use: 'laranjo [texto]'
       }

@@ -21,5 +21,10 @@ exports.help = {
       name: 'discord.js',
       aliases: ['docs','documentação'],
       status: 'on',
-      onlydev: 'false'
+      onlydev: 'false',
+      categoria: 'Membros',
+      permissões: [],
+      permissõesbot: ['Enviar mensagens', 'Enviar Embeds e links'],
+      descrição: 'Pesquisa algo na documentação do discord.js',
+      use: 'docs [Função]'
     }

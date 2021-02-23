@@ -41,5 +41,10 @@ exports.help = {
     name: 'zuraaa',
     aliases: ['zuraaainfo'],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'BOT',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens', 'Enviar Embeds e Links'],
+    descrição: 'Receba informações sobre algum bot que esta no Zuraaa!',
+    use: 'zuraaa [bot]'
 }

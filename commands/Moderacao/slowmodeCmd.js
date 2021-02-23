@@ -19,6 +19,11 @@ exports.help = {
     name: 'modolento',
     aliases: ['slowmode'],
     status: "on",
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'Moderacao',
+    permissões: ['Gerenciar Canais'],
+    permissõesbot: ['Enviar mensagens', 'Enviar Embeds e links', 'Gerenciar Canais'],
+    descrição: 'Define ou altera o tempo entre uma mensagem e outra do canal',
+    use: 'slowmode [tempo]'
 
 }

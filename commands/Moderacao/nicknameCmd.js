@@ -25,5 +25,10 @@ exports.help = {
   name: 'nickname',
   aliases: ['rename','nick','renomear'],
   status: 'on',
-  onlydev: 'false'
+  onlydev: 'false',
+  categoria: 'Moderacao',
+  permissões: ['Gerenciar Apelidos'],
+  permissõesbot: ['Enviar mensagens', 'Enviar Embeds e links', 'Gerenciar Canais'],
+  descrição: 'Altere o apelido de um membro',
+  use: 'nickname [user]'
 }

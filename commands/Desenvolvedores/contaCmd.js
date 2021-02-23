@@ -17,5 +17,10 @@ exports.help = {
     name: 'conta',
     aliases: [],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'Desenvolvedor',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens'],
+    descrição: 'Veja a data de criação da sua conta em meu banco de dados',
+    use: 'conta'
 }

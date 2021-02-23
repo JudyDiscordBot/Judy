@@ -29,5 +29,10 @@ exports.help = {
     name: 'morse',
     aliases: [],
 	status: 'on',
-	onlydev: 'false'
+	onlydev: 'false',
+	categoria: 'Membros',
+	permissões: [],
+    permissõesbot: ['Enviar mensagens'],
+    descrição: 'Tranforma o seu texto em um código morse',
+    use: 'morse [Texto]'
   }

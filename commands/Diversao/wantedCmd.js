@@ -33,5 +33,10 @@ exports.help = {
     name: 'wanted',
     aliases: ['procurado'],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'Diversao',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens', 'Enviar imagens e arquivos'],
+    descrição: 'Corra !! Você está sendo procurado',
+    use: 'wanted [user]'
 }

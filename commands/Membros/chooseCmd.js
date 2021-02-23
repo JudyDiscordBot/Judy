@@ -21,5 +21,10 @@ exports.help = {
   name: 'choose',
   aliases: ['escolher'],
   status: 'on',
-  onlydev: 'false'
+  onlydev: 'false',
+  categoria: 'Membros',
+  permissões: [],
+	permissõesbot: ['Enviar mensagens', 'Enviar Embeds e links'],
+	descrição: 'Vamos lá, eu te ajudo com essa escolha',
+	use: 'escolher [escolha 1, escolha 2]'
 }

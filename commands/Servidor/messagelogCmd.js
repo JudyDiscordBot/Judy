@@ -32,5 +32,11 @@ exports.help = {
     name: 'messagelog',
     aliases: ['auditoria'],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'Servidor',
+    permissões: ['Administrador'],
+    permissõesbot: ['Enviar mensagens', 'Administrador'],
+    descrição: 'Define um canal para enviar as logs de mensagens',
+    use: 'messagelog [#canal]'
+
 }

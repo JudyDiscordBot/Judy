@@ -33,5 +33,10 @@ exports.help = {
     name: 'serverlog',
     aliases: [],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'Servidor',
+    permissões: ['Administrador'],
+    permissõesbot: ['Enviar mensagens', 'Administrador'],
+    descrição: 'Define um canal para enviar as logs do servidor',
+    use: 'serverloglog [#canal]'
 }

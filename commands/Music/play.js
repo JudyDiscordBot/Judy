@@ -2,7 +2,12 @@ exports.help = {
     name: 'play',
     aliases: ['p', 'tocar'],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'Música',
+        permissões: [],
+    permissõesbot: ['Enviar mensagens', 'Conectar-se ao canal de voz'],
+    descrição: 'Adiciona uma música à fila',
+    use: 'play [música]'
 }
 
 module.exports.run = async (client, message, args) => {

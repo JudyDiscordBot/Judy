@@ -71,5 +71,11 @@ module.exports.run = async (client, message, args) => {
         name: 'corona',
         aliases: ['covid','coronavírus','coronavirus'],
         status: 'on',
-        onlydev: 'false'
+        onlydev: 'false',
+        categoria: 'Membros',
+        permissões: [],
+        permissõesbot: ['Enviar mensagens', 'Enviar Embeds e links'],
+        descrição: 'Mostra o status do Covid-19',
+        use: 'covid <país>'
+
       }

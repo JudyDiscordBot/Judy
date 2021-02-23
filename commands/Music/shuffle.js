@@ -2,7 +2,12 @@ exports.help = {
     name: 'shuffle',
     aliases: ['sh', 'aleatório', 'random'],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'Música',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens', 'Conectar-se ao canal de voz'],
+    descrição: 'Bagunça a fila e deixa as música em uma ordem aleátoria',
+    use: 'sh'
 }
 
 module.exports.run = async (client, message, args) => {

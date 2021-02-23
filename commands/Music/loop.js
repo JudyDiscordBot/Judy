@@ -2,7 +2,12 @@ exports.help = {
     name: 'loop',
     aliases: ['lp', 'repeat', 'repetir', 're'],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'Música',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens', 'Conectar-se ao canal de voz'],
+    descrição: 'Repete indefinidamente a música atual',
+    use: 'loop'
 }
 
 module.exports.run = async (client, message, args) => {

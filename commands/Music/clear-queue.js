@@ -2,8 +2,14 @@ exports.help = {
     name: 'clear-queue',
     aliases: ['cq', 'limpar-queue', 'limpar'],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'Música',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens', 'Conectar-se ao canal de voz'],
+    descrição: 'Apaga todas as músicas da fila',
+    use: 'clear-queue'
 }
+
 
 module.exports.run = async (client, message, args) => {
         if (!message.member.voice.channel) return message.channel.send(`**${client.emotes.error} Você não está conectado(a) a nenhum canal de voz.**`);

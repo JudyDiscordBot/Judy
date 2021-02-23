@@ -1,16 +1,14 @@
- const Discord = require('discord.js');
+const Discord = require('discord.js');
 exports.run = async (client, message, args, config) => {
   const db = require('../../Structures/json/db.json')
-  if(!db.developer.includes(message.author.id)) return message.quote('**<:negado:755502002619940935> Apenas desenvolvedores do bot podem utilizar este comando!**')
-  
+    
   const perms = require('../../Structures/json/perms.json')
-  
   if (!message.guild.me.hasPermission("MANAGE_CHANNELS")) return message.quote("**Eu não tenho permissão de \`${perms.MANAGE_CHANNELS}\`**")
   if (!message.member.hasPermission("MANAGE_CHANNELS")) return message.quote(`Você não tem permissão de \`${perms.MANAGE_CHANNELS}\``);
 
   let card = new Discord.MessageEmbed()
-    .setAuthor(`Lock` , client.user.displayAvatarURL())
-    .setDescription(`${message.author}, Cilque em 🔒 para fechar o canal !`)
+  .setAuthor(`Lock` , client.user.displayAvatarURL())
+    .setDescription(`${message.author}, Cilque em 🔒 para abrir o canal !`)
     .setColor('#FFC4E7')
     message.quote(card).then(msg => {
 
@@ -23,14 +21,14 @@ exports.run = async (client, message, args, config) => {
 
     let card2 = new Discord.MessageEmbed()
     .setAuthor(`Lock` , client.user.displayAvatarURL())
-    .setDescription(`${message.author}, Canal fechado com sucesso!`)
+    .setDescription(`${message.author}, Canal desbloqueado com sucesso!`)
     .setColor('#FFC4E7')
 
     msg.edit(card2);
   
       if (!client.lockit) client.lockit = [];
       message.channel.createOverwrite(message.guild.id, {
-              SEND_MESSAGES: false  
+              SEND_MESSAGES: true  
       })
 
      
@@ -41,8 +39,13 @@ exports.run = async (client, message, args, config) => {
                                 )};
 
                                 exports.help = {
-                                  name: 'lock',
-                                  aliases: ['trancar'],
+                                  name: 'unlock',
+                                  aliases: ['destrancar'],
                                   status: 'off',
-                                  onlydev: 'false'
+                                  onlydev: 'false',
+                                  categoria: 'Moderacao',
+                                  permissões: ['Gerenciar Canais'],
+                                  permissõesbot: ['Enviar mensagens', 'Enviar Embeds e links', 'Gerenciar Canais'],
+                                  descrição: 'Destranque um canal',
+                                  use: 'unlock'
                                 }

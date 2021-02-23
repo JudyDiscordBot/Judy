@@ -22,5 +22,10 @@ let channel = message.mentions.channels.first() || message.guild.channels.cache.
     name: "channelinfo",
 	aliases: ['channel'],
 	status: 'on',
-	onlydev: 'false'
+	onlydev: 'false',
+	categoria: 'Membros',
+	permissões: [],
+	permissõesbot: ['Enviar mensagens', 'Enviar Embeds e links'],
+	descrição: 'Mostra informações sobre um canal',
+	use: 'channelinfo <#channel>'
 }

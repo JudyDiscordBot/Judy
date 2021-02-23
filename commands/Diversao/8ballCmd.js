@@ -25,5 +25,10 @@ module.exports.help = {
     name: "8ball",
     aliases: ['8b'],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'Diversao',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens'],
+    descrição: 'Precisa tomar um decisão ? Pergunte algo qu eu te ajudo !!!!',
+    use: '8ball [pergunta]'
 }

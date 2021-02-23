@@ -38,5 +38,10 @@ exports.help = {
     name: "primeiraspalavras",
     aliases: ['firstword', 'firstwords'],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'Diversao',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens', 'Enviar arquivos e imagens'],
+    descrição: 'Oh meu deus, suas primeiras palavras !!!!',
+    use: 'firstwords [texto]'
 }

@@ -29,7 +29,12 @@ db.findOne({guild:message.guild.id}, (err, a) => {
 
 exports.help = {
     name: 'channelcommand',
+    categoria: 'BOT',
     aliases: [],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    permissões: ['Administrador'],
+    permissõesbot: ['Enviar mensagens', 'Administrador'],
+    descrição: 'Seta um canal de comandos no servidor, para evitar que os usuários executem comandos no lugar errado',
+    use: 'channelcommand [#channel]'
 }

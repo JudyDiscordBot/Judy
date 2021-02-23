@@ -2,7 +2,12 @@ exports.help = {
     name: 'stop',
     aliases: ['dc', 'sair', 'desconectar', 'parar'],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'Música',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens'],
+    descrição: 'Para a música e desconecta o bot do canal',
+    use: 'stop'
 }
 
 module.exports.run = async (client, message, args) => {

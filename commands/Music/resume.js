@@ -2,7 +2,12 @@ exports.help = {
     name: 'resume',
     aliases: ['retomar', 'continuar', 'resumir'],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'Música',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens', 'Conectar-se ao canal de voz'],
+    descrição: 'Retoma a música que foi pausada',
+    use: 'resume'
 }
 
 module.exports.run = async (client, message, args) => {

@@ -8,5 +8,10 @@ exports.help = {
     name: 'uptime',
     aliases: ['time'],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'BOT',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens'],
+    descrição: 'Veja a quanto tempo o bot está online',
+    use: 'uptime'
   }

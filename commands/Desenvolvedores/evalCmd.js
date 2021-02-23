@@ -38,5 +38,10 @@ exports.help = {
     name: 'eval',
     aliases: ['ev','evaluate'],
     status: "on",
-    onlydev: 'true'
+    onlydev: 'true',
+    categoria: 'Desenvolvedor',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens', 'Enviar Embeds e Links'],
+    descrição: 'Roda qualquer código',
+    use: 'eval [codigo]'
 }//

@@ -44,5 +44,10 @@ exports.help = {
     name: 'playstore',
     aliases: [],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'Miscelanea',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens', 'Enviar Embeds e links'],
+    descrição: 'Pesquise um aplicativo na PlayStore',
+    use: 'playstore [aplicativo]'
   }

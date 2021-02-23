@@ -4,7 +4,12 @@ exports.help = {
     name: 'playerdebug',
     aliases: [],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'Música',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens'],
+    descrição: 'Bane um usuário de executar meus comandos',
+    use: 'judyban [user]'
 }
 
 module.exports.run = async (client, message, args) => {

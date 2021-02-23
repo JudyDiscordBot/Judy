@@ -35,5 +35,10 @@ exports.help = {
     name: 'emoji',
     aliases: [],
     status: "on",
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'Membros',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens', 'Enviar Embeds e links'],
+    descrição: 'Mostra um emoji para você',
+    use: 'emoji [Emoji]'
 }

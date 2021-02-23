@@ -68,5 +68,10 @@ exports.help = {
   name: 'avatar',
   aliases: [],
   status: 'on',
-  onlydev: 'false'
+  onlydev: 'false',
+  categoria: 'Membros',
+  permissões: [],
+  permissõesbot: ['Enviar mensagens', 'Enviar Embeds e links'],
+  descrição: 'Mostra o avatar de um usuário',
+  use: 'avatar <user>'
 }

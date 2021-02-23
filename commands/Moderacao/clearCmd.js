@@ -29,5 +29,10 @@ module.exports.run = async (client, message, args) => {
         name: 'clear',
         aliases: ['apagar','purge','clean'],
         status: 'on',
-        onlydev: 'false'
+        onlydev: 'false',
+        categoria: 'Moderacao',
+        permissões: ['Gerenciar Mensagens'],
+        permissõesbot: ['Enviar mensagens', 'Enviar Embeds e links','Gerenciar Mensagens'],
+        descrição: 'Apaga uma quantia de mensagens e um canal',
+        use: 'clear [quantia de mensagens que você quer apagar (de 1 a 100)]'
    }

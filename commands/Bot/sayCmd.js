@@ -75,5 +75,10 @@ exports.help = {
   name: 'say',
   aliases: ['falar'],
   status: 'on',
-  onlydev: 'false'
+  onlydev: 'false',
+  categoria: 'BOT',
+  permissões: ['Gerenciar Mensagens'],
+  permissõesbot: ['Enviar mensagens', 'Gerenciar Mensagens'],
+  descrição: 'Envia uma mensagem utilizando o bot',
+  use: 'say [Mensagem]'
 }

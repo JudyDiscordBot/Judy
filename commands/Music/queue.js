@@ -2,7 +2,12 @@ exports.help = {
     name: 'queue',
     aliases: ['lista', 'playlist'],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'Música',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens', 'Conectar-se ao canal de voz'],
+    descrição: 'Mostra quais as músicas da fila',
+    use: 'queue'
 }
 
 module.exports.run = async (client, message, args) => {

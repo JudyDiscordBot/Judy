@@ -2,7 +2,12 @@ exports.help = {
     name: 'search',
     aliases: ['sr', 'procurar'],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'Música',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens', 'Conectar-se ao canal de voz'],
+    descrição: 'Pesquisa uma música e adiciona ela na fila',
+    use: 'procurar [música]'
 }
 
 module.exports.run = async (client, message, args) => {

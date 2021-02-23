@@ -76,8 +76,13 @@ try {
     }
 
 exports.help = {
-    name: 'ui',
-    aliases: ['userinfo'],
+    name: 'userinfo',
+    aliases: ['ui'],
     status: "on",
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'Membros',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens', 'Enviar Embeds e links'],
+    descrição: 'Veja informações sobre um usuário',
+    use: 'userinfo <user>'
 }

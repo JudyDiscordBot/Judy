@@ -30,5 +30,10 @@ exports.help = {
     name: 'votar',
     aliases: ['upvote','vote'],
     status: 'on',
-    onlydev: 'false'
+    onlydev: 'false',
+    categoria: 'BOT',
+    permissões: [],
+    permissõesbot: ['Enviar mensagens', 'Enviar Embeds e Links'],
+    descrição: 'Receba o link para votar na botlist Zuraaa!',
+    use: 'votar'
 }
