@@ -1,6 +1,6 @@
 node_modules
 Structures/json/config.json
 .vscode
-events/KarolMessage.js
+arquivados/KarolMessage.js
 events/randomMessage.js
 Judy.zip
