@@ -6,11 +6,11 @@ client.on("ready", async () => {
   const totalGuilds = client.guilds.cache.size
 
     let activities = [
-        `${config.bot.prefix}help・${client.ws.ping}ms [${client.guilds.cache.size}]`,
-        `${config.bot.prefix}help・${client.ws.ping}ms [${client.guilds.cache.size}]`,
-        `${config.bot.prefix}help・${client.ws.ping}ms [${client.guilds.cache.size}]`,
-        `${config.bot.prefix}help・${client.ws.ping}ms [${client.guilds.cache.size}]`,
-        `${config.bot.prefix}help・${client.ws.ping}ms [${client.guilds.cache.size}]`,
+        ` ${config.bot.prefix}ajuda・${client.ws.ping}ms [${client.guilds.cache.size}].`,
+        `${config.bot.prefix}help・${client.ws.ping}MS [${client.guilds.cache.size}].`,
+        `${config.bot.prefix}help ・${client.ws.ping}ms [${client.guilds.cache.size}]`,
+        `${config.bot.prefix}help・${client.ws.ping}ms [${client.guilds.cache.size}].`,
+        `${config.bot.prefix}ajuda・${client.ws.ping}ms [${client.guilds.cache.size}]`,
       ],
       i = 0;
     const colors = require('colors')
